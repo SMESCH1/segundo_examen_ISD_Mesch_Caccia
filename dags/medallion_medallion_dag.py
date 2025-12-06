@@ -151,19 +151,19 @@ def build_dag() -> DAG:
         bronze_clean_task = PythonOperator(
             task_id="bronze_clean",
             python_callable=bronze_clean,
-            op_kwargs={"ds_nodash": "{{ ds_nodash }}"},
+            # op_kwargs={"ds_nodash": "{{ ds_nodash }}"}, # si usamos **context no hace falta
         )
         # task para carga de datos en capa silver
         silver_dbt_run_task = PythonOperator(
             task_id="silver_dbt_run",
             python_callable=silver_dbt_run,
-            op_kwargs={"ds_nodash": "{{ ds_nodash }}"},
+            # op_kwargs={"ds_nodash": "{{ ds_nodash }}"}, 
         )
         # task para test en capa gold
         gold_dbt_test_task = PythonOperator(
             task_id="gold_dbt_test",
             python_callable=gold_dbt_test,
-            op_kwargs={"ds_nodash": "{{ ds_nodash }}"},
+            #op_kwargs={"ds_nodash": "{{ ds_nodash }}"},
         )
 
         # dependencias del flujo del dag
