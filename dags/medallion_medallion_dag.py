@@ -12,7 +12,11 @@ from pathlib import Path
 import pendulum
 from airflow import DAG
 from airflow.exceptions import AirflowException
-from airflow.operators.python import PythonOperator
+# from airflow.operators.python import PythonOperator
+
+#modificamos para atajar warning que nos salta
+from airflow.providers.standard.operators.python import PythonOperator
+
 
 # pylint: disable=import-error,wrong-import-position
 
@@ -85,9 +89,12 @@ def silver_dbt_run(**context):
     ds_nodash = context["ds_nodash"]
     result = _run_dbt_command("run", ds_nodash)
     if result.returncode != 0:
-        raise AirflowException(
-            f"dbt run failed: {result.stderr}"
-        )
+        # agregamos logs detallados para debug
+        error_log = f"dbt run failed (returncode: {result.returncode})\n"
+        error_log += f"STDOUT:\n{result.stdout}\n"
+        error_log += f"STDERR:\n{result.stderr}\n" 
+        raise AirflowException(error_log)
+        
     return True
 
 # funcion test en capa gold
