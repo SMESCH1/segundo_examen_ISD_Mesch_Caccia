@@ -1997,3 +1997,193 @@ having count(*) > 1
 [0m12:17:50.531334 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc269b79970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc267bb3f80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc266f6eb70>]}
 [0m12:17:50.532174 [debug] [MainThread]: Flushing usage events
 [0m12:17:51.409942 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:26:36.903246 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8ec9d27740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8ecacf5c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8ec823f860>]}
+
+
+============================== 12:26:36.906573 | f267b81b-1d60-4147-88dd-0bfdbd5cc16d ==============================
+[0m12:26:36.906573 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:26:36.907624 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'introspect': 'True', 'warn_error': 'None', 'version_check': 'True', 'empty': 'False', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'printer_width': '80', 'log_format': 'default', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'profiles_dir': '/home/sebastian/.dbt', 'debug': 'False', 'indirect_selection': 'eager', 'use_colors': 'True', 'write_json': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'no_print': 'None', 'log_cache_events': 'False'}
+[0m12:26:36.911041 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'medallion_duckdb'
+[0m12:26:36.912121 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.08132781, "process_in_blocks": "552", "process_kernel_time": 0.166717, "process_mem_max_rss": "100776", "process_out_blocks": "8", "process_user_time": 1.603287}
+[0m12:26:36.912734 [debug] [MainThread]: Command `dbt run` failed at 12:26:36.912565 after 0.08 seconds
+[0m12:26:36.913552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8ec8849730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8ec829aed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8ec8299250>]}
+[0m12:26:36.914498 [debug] [MainThread]: Flushing usage events
+[0m12:26:38.116724 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:28:01.304979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c788ead6f60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c788df553d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c7890449c40>]}
+
+
+============================== 12:28:01.308276 | f0d55415-d3c8-4977-bf5a-0943fe696b92 ==============================
+[0m12:28:01.308276 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:28:01.308988 [debug] [MainThread]: running dbt with arguments {'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'printer_width': '80', 'version_check': 'True', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'use_colors': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'False', 'use_experimental_parser': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'no_print': 'None', 'write_json': 'True', 'log_cache_events': 'False', 'log_format': 'default', 'target_path': 'None', 'quiet': 'False', 'profiles_dir': '/home/sebastian/.dbt'}
+[0m12:28:01.311792 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'medallion_duckdb'
+[0m12:28:01.312791 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.06774062, "process_in_blocks": "0", "process_kernel_time": 0.120586, "process_mem_max_rss": "100868", "process_out_blocks": "8", "process_user_time": 1.515803}
+[0m12:28:01.313407 [debug] [MainThread]: Command `dbt run` failed at 12:28:01.313275 after 0.07 seconds
+[0m12:28:01.314077 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c788d76f8f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c788e7dba40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c788dead760>]}
+[0m12:28:01.314989 [debug] [MainThread]: Flushing usage events
+[0m12:28:02.375349 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:28:04.796321 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a7792ce30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a76e7e780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a77b89f40>]}
+
+
+============================== 12:28:04.801376 | c620185d-6fda-4ebc-9738-c0d5b5635ce6 ==============================
+[0m12:28:04.801376 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:28:04.802567 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'static_parser': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None', 'log_cache_events': 'False', 'fail_fast': 'False', 'write_json': 'True', 'use_experimental_parser': 'False', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'printer_width': '80', 'profiles_dir': '../profiles', 'warn_error': 'None', 'debug': 'False', 'cache_selected_only': 'False', 'invocation_command': 'dbt test', 'no_print': 'None', 'partial_parse': 'True', 'introspect': 'True', 'use_colors': 'True', 'target_path': 'None'}
+[0m12:28:05.155366 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a76cfa870>]}
+[0m12:28:05.229759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a7116c0b0>]}
+[0m12:28:05.231449 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m12:28:05.333757 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m12:28:05.427547 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:28:05.428136 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a775dd8b0>]}
+[0m12:28:06.739414 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values`. Arguments to generic tests
+should be nested under the `arguments` property.`
+[0m12:28:06.740077 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a70eb7140>]}
+[0m12:28:06.865551 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a705d69c0>]}
+[0m12:28:06.946423 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m12:28:06.948937 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m12:28:06.971928 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a70d7fc80>]}
+[0m12:28:06.972521 [info ] [MainThread]: Found 2 models, 16 data tests, 469 macros
+[0m12:28:06.973033 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a6ba3a810>]}
+[0m12:28:06.975668 [info ] [MainThread]: 
+[0m12:28:06.976259 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:28:06.976722 [info ] [MainThread]: 
+[0m12:28:06.977639 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:28:06.984046 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_medallion_main'
+[0m12:28:07.026328 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m12:28:07.026810 [debug] [ThreadPool]: On list_medallion_main: BEGIN
+[0m12:28:07.027227 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:28:07.034542 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: BEGIN
+[0m12:28:07.035043 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m12:28:07.035969 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:28:07.036586 [debug] [MainThread]: Connection 'list_medallion_main' was properly closed.
+[0m12:28:07.037208 [info ] [MainThread]: 
+[0m12:28:07.037736 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.06 seconds (0.06s).
+[0m12:28:07.038543 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Cannot open file "/home/w1ndman/laboral/examen_ing_de_sw_n_data/warehouse/medallion.duckdb": No such file or directory
+[0m12:28:07.039546 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m12:28:07.040937 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 2.3422985, "process_in_blocks": "264", "process_kernel_time": 0.214755, "process_mem_max_rss": "150980", "process_out_blocks": "2104", "process_user_time": 4.199228}
+[0m12:28:07.041787 [debug] [MainThread]: Command `dbt test` failed at 12:28:07.041655 after 2.34 seconds
+[0m12:28:07.042324 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a775ddee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a76c85c40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a705d7fb0>]}
+[0m12:28:07.042996 [debug] [MainThread]: Flushing usage events
+[0m12:28:07.911881 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:30:54.850421 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750414d4650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775040f8fa40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775040d775c0>]}
+
+
+============================== 12:30:54.859040 | 3ac225ef-34b6-4ea2-bb88-a96686d1a836 ==============================
+[0m12:30:54.859040 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:30:54.859726 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'target_path': 'None', 'use_experimental_parser': 'False', 'profiles_dir': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/profiles', 'static_parser': 'True', 'printer_width': '80', 'warn_error': 'None', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'fail_fast': 'False', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'invocation_command': 'dbt run', 'quiet': 'False', 'no_print': 'None', 'empty': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'version_check': 'True', 'debug': 'False'}
+[0m12:30:55.107240 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77503a93f830>]}
+[0m12:30:55.177427 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750409ab230>]}
+[0m12:30:55.179078 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m12:30:55.287032 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m12:30:55.383059 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:30:55.383632 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77503a66aba0>]}
+[0m12:30:56.611937 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values`. Arguments to generic tests
+should be nested under the `arguments` property.`
+[0m12:30:56.612493 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775040541940>]}
+[0m12:30:56.718795 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77503945baa0>]}
+[0m12:30:56.797321 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m12:30:56.799307 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m12:30:56.813113 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77503949f350>]}
+[0m12:30:56.813672 [info ] [MainThread]: Found 2 models, 16 data tests, 469 macros
+[0m12:30:56.814171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775039439e50>]}
+[0m12:30:56.817116 [info ] [MainThread]: 
+[0m12:30:56.817927 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:30:56.818426 [info ] [MainThread]: 
+[0m12:30:56.819155 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:30:56.824218 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_medallion'
+[0m12:30:56.865122 [debug] [ThreadPool]: Using duckdb connection "list_medallion"
+[0m12:30:56.865593 [debug] [ThreadPool]: On list_medallion: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"medallion"'
+    
+  
+  
+[0m12:30:56.865968 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:30:56.872400 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"medallion"'
+    
+  
+  
+[0m12:30:56.872871 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m12:30:56.873759 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:30:56.874139 [debug] [MainThread]: Connection 'list_medallion' was properly closed.
+[0m12:30:56.874517 [info ] [MainThread]: 
+[0m12:30:56.875118 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.06 seconds (0.06s).
+[0m12:30:56.876006 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Could not set lock on file "/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/warehouse/medallion.duckdb": Conflicting lock is held in /snap/duckdb/9/duckdb (PID 33229) by user sebastian. See also https://duckdb.org/docs/stable/connect/concurrency
+[0m12:30:56.876987 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m12:30:56.878276 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.0869684, "process_in_blocks": "1296", "process_kernel_time": 0.206634, "process_mem_max_rss": "149960", "process_out_blocks": "2120", "process_user_time": 3.435918}
+[0m12:30:56.879453 [debug] [MainThread]: Command `dbt run` failed at 12:30:56.879251 after 2.09 seconds
+[0m12:30:56.880216 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77504317db20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77503952d8e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750393179e0>]}
+[0m12:30:56.881017 [debug] [MainThread]: Flushing usage events
+[0m12:30:57.694691 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:30:59.690265 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c7846e030>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c7810f260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c78371d00>]}
+
+
+============================== 12:30:59.693480 | 6f1bc72f-8452-4994-8edc-2b338bbfeaed ==============================
+[0m12:30:59.693480 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:30:59.694247 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'profiles_dir': '../profiles', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'debug': 'False', 'version_check': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'target_path': 'None', 'warn_error': 'None', 'printer_width': '80', 'invocation_command': 'dbt test', 'no_print': 'None', 'introspect': 'True', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'empty': 'None', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'log_format': 'default', 'quiet': 'False'}
+[0m12:30:59.938991 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6f1bc72f-8452-4994-8edc-2b338bbfeaed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c7786e120>]}
+[0m12:31:00.009123 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6f1bc72f-8452-4994-8edc-2b338bbfeaed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c719dfcb0>]}
+[0m12:31:00.010813 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m12:31:00.107734 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m12:31:00.211192 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:31:00.211622 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:31:00.253412 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6f1bc72f-8452-4994-8edc-2b338bbfeaed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c783e5490>]}
+[0m12:31:00.327928 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m12:31:00.330352 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m12:31:00.356976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6f1bc72f-8452-4994-8edc-2b338bbfeaed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c71357c20>]}
+[0m12:31:00.357534 [info ] [MainThread]: Found 2 models, 16 data tests, 469 macros
+[0m12:31:00.358048 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6f1bc72f-8452-4994-8edc-2b338bbfeaed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c77456060>]}
+[0m12:31:00.360590 [info ] [MainThread]: 
+[0m12:31:00.361088 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:31:00.361483 [info ] [MainThread]: 
+[0m12:31:00.362151 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:31:00.367166 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_medallion_main'
+[0m12:31:00.407847 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m12:31:00.408425 [debug] [ThreadPool]: On list_medallion_main: BEGIN
+[0m12:31:00.408830 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:31:00.415189 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: BEGIN
+[0m12:31:00.415687 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m12:31:00.416681 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:31:00.417054 [debug] [MainThread]: Connection 'list_medallion_main' was properly closed.
+[0m12:31:00.417396 [info ] [MainThread]: 
+[0m12:31:00.417808 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.06 seconds (0.06s).
+[0m12:31:00.418372 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Could not set lock on file "/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/warehouse/medallion.duckdb": Conflicting lock is held in /snap/duckdb/9/duckdb (PID 33229) by user sebastian. See also https://duckdb.org/docs/stable/connect/concurrency
+[0m12:31:00.419291 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.78826386, "process_in_blocks": "0", "process_kernel_time": 0.213313, "process_mem_max_rss": "145976", "process_out_blocks": "1096", "process_user_time": 2.192943}
+[0m12:31:00.419818 [debug] [MainThread]: Command `dbt test` failed at 12:31:00.419701 after 0.79 seconds
+[0m12:31:00.420274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c77d1ac30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c71916810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c7197b620>]}
+[0m12:31:00.421143 [debug] [MainThread]: Flushing usage events
+[0m12:31:01.713950 [debug] [MainThread]: An error was encountered while trying to flush usage events
