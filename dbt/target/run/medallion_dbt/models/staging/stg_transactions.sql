@@ -12,4 +12,13 @@ with source as (
 )
 
 -- TODO: Completar el modelo para que cree la tabla staging con los tipos adecuados segun el schema.yml.
+
+select
+    cast(transaction_id as integer) as transaction_id,
+    cast(customer_id as integer) as customer_id,
+    cast(amount as decimal(10, 2)) as amount,
+    cast(status as varchar) as status,
+    cast(transaction_ts as timestamp) as transaction_ts,
+    cast(transaction_date as date) as transaction_date
+from source
   );
