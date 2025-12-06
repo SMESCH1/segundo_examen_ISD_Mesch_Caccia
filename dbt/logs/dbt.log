@@ -1,0 +1,2189 @@
+[0m11:42:40.815570 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bc2d97830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bc443dbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bc43b15b0>]}
+
+
+============================== 11:42:40.819333 | 5ae5c382-97e2-49d1-a825-e16c5b46588b ==============================
+[0m11:42:40.819333 [info ] [MainThread]: Running with dbt=1.10.15
+[0m11:42:40.820025 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'empty': 'False', 'write_json': 'True', 'use_colors': 'True', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'target_path': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'indirect_selection': 'eager', 'static_parser': 'True', 'log_cache_events': 'False', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'invocation_command': 'dbt run --project-dir /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt', 'printer_width': '80', 'profiles_dir': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/profiles', 'log_format': 'default', 'no_print': 'None', 'debug': 'False', 'version_check': 'True', 'partial_parse': 'True'}
+[0m11:42:41.108617 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5ae5c382-97e2-49d1-a825-e16c5b46588b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bbca52870>]}
+[0m11:42:41.186741 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5ae5c382-97e2-49d1-a825-e16c5b46588b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bc4ee4920>]}
+[0m11:42:41.191864 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m11:42:41.303728 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m11:42:41.305214 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m11:42:41.306144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '5ae5c382-97e2-49d1-a825-e16c5b46588b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bc25a0230>]}
+[0m11:42:42.791524 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values`. Arguments to generic tests
+should be nested under the `arguments` property.`
+[0m11:42:42.792155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '5ae5c382-97e2-49d1-a825-e16c5b46588b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bbc8402f0>]}
+[0m11:42:42.916653 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5ae5c382-97e2-49d1-a825-e16c5b46588b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bbc732ff0>]}
+[0m11:42:43.011962 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m11:42:43.016348 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m11:42:43.036560 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5ae5c382-97e2-49d1-a825-e16c5b46588b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bbc096480>]}
+[0m11:42:43.037315 [info ] [MainThread]: Found 2 models, 16 data tests, 469 macros
+[0m11:42:43.038331 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5ae5c382-97e2-49d1-a825-e16c5b46588b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bc25a0b30>]}
+[0m11:42:43.041505 [info ] [MainThread]: 
+[0m11:42:43.042064 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:42:43.042710 [info ] [MainThread]: 
+[0m11:42:43.043518 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m11:42:43.049480 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_medallion'
+[0m11:42:43.092574 [debug] [ThreadPool]: Using duckdb connection "list_medallion"
+[0m11:42:43.093058 [debug] [ThreadPool]: On list_medallion: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"medallion"'
+    
+  
+  
+[0m11:42:43.093463 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:42:46.055665 [debug] [ThreadPool]: SQL status: OK in 2.962 seconds
+[0m11:42:46.057893 [debug] [ThreadPool]: On list_medallion: Close
+[0m11:42:46.059050 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_medallion, now create_medallion_main)
+[0m11:42:46.059598 [debug] [ThreadPool]: Creating schema "database: "medallion"
+schema: "main"
+"
+[0m11:42:46.066438 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m11:42:46.066939 [debug] [ThreadPool]: On create_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "create_medallion_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='medallion'
+        and type='sqlite'
+    
+  
+[0m11:42:46.067390 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:42:46.069374 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:42:46.072166 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m11:42:46.072650 [debug] [ThreadPool]: On create_medallion_main: BEGIN
+[0m11:42:46.073820 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:42:46.074530 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m11:42:46.075186 [debug] [ThreadPool]: On create_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "create_medallion_main"} */
+
+    
+    
+        create schema if not exists "medallion"."main"
+    
+[0m11:42:46.076018 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m11:42:46.077030 [debug] [ThreadPool]: On create_medallion_main: COMMIT
+[0m11:42:46.077459 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m11:42:46.077857 [debug] [ThreadPool]: On create_medallion_main: COMMIT
+[0m11:42:46.078521 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m11:42:46.078946 [debug] [ThreadPool]: On create_medallion_main: Close
+[0m11:42:46.080235 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_medallion_main, now list_medallion_main)
+[0m11:42:46.086037 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m11:42:46.086835 [debug] [ThreadPool]: On list_medallion_main: BEGIN
+[0m11:42:46.087706 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:42:46.089058 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:42:46.089513 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m11:42:46.090300 [debug] [ThreadPool]: On list_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion_main"} */
+select
+      'medallion' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'medallion'
+  
+[0m11:42:46.105116 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m11:42:46.106810 [debug] [ThreadPool]: On list_medallion_main: ROLLBACK
+[0m11:42:46.108645 [debug] [ThreadPool]: Failed to rollback 'list_medallion_main'
+[0m11:42:46.109126 [debug] [ThreadPool]: On list_medallion_main: Close
+[0m11:42:46.109860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5ae5c382-97e2-49d1-a825-e16c5b46588b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bbc1313a0>]}
+[0m11:42:46.110430 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:42:46.110811 [debug] [MainThread]: On master: BEGIN
+[0m11:42:46.111222 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:42:46.112024 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:42:46.112421 [debug] [MainThread]: On master: COMMIT
+[0m11:42:46.112811 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:42:46.113213 [debug] [MainThread]: On master: COMMIT
+[0m11:42:46.113806 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m11:42:46.114208 [debug] [MainThread]: On master: Close
+[0m11:42:46.117372 [debug] [Thread-1 (]: Began running node model.medallion_dbt.stg_transactions
+[0m11:42:46.118570 [info ] [Thread-1 (]: 1 of 2 START sql view model main.stg_transactions .............................. [RUN]
+[0m11:42:46.119447 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_medallion_main, now model.medallion_dbt.stg_transactions)
+[0m11:42:46.120395 [debug] [Thread-1 (]: Began compiling node model.medallion_dbt.stg_transactions
+[0m11:42:46.131520 [debug] [Thread-1 (]: Writing injected SQL for node "model.medallion_dbt.stg_transactions"
+[0m11:42:46.132729 [debug] [Thread-1 (]: Began executing node model.medallion_dbt.stg_transactions
+[0m11:42:46.174453 [debug] [Thread-1 (]: Writing runtime sql for node "model.medallion_dbt.stg_transactions"
+[0m11:42:46.175361 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m11:42:46.175926 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: BEGIN
+[0m11:42:46.176372 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:42:46.177294 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:42:46.177774 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m11:42:46.178259 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.stg_transactions"} */
+
+  
+  create view "medallion"."main"."stg_transactions__dbt_tmp" as (
+    
+
+
+with source as (
+    select *
+    from read_parquet(
+        '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/data/clean/transactions_20251201_clean.parquet'
+    )
+)
+
+-- TODO: Completar el modelo para que cree la tabla staging con los tipos adecuados segun el schema.yml.
+  );
+
+[0m11:42:46.179067 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.stg_transactions"} */
+
+  
+  create view "medallion"."main"."stg_transactions__dbt_tmp" as (
+    
+
+
+with source as (
+    select *
+    from read_parquet(
+        '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/data/clean/transactions_20251201_clean.parquet'
+    )
+)
+
+-- TODO: Completar el modelo para que cree la tabla staging con los tipos adecuados segun el schema.yml.
+  );
+
+[0m11:42:46.179552 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m11:42:46.180152 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: ROLLBACK
+[0m11:42:46.189146 [debug] [Thread-1 (]: Failed to rollback 'model.medallion_dbt.stg_transactions'
+[0m11:42:46.189764 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: Close
+[0m11:42:46.192526 [debug] [Thread-1 (]: Runtime Error in model stg_transactions (models/staging/stg_transactions.sql)
+  Parser Error: syntax error at or near ")"
+  
+  LINE 16:   );
+             ^
+[0m11:42:46.194407 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5ae5c382-97e2-49d1-a825-e16c5b46588b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bc35e39b0>]}
+[0m11:42:46.195369 [error] [Thread-1 (]: 1 of 2 ERROR creating sql view model main.stg_transactions ..................... [[31mERROR[0m in 0.07s]
+[0m11:42:46.196315 [debug] [Thread-1 (]: Finished running node model.medallion_dbt.stg_transactions
+[0m11:42:46.196988 [debug] [Thread-7 (]: Marking all children of 'model.medallion_dbt.stg_transactions' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_transactions (models/staging/stg_transactions.sql)
+  Parser Error: syntax error at or near ")"
+  
+  LINE 16:   );
+             ^.
+[0m11:42:46.198541 [debug] [Thread-3 (]: Began running node model.medallion_dbt.fct_customer_transactions
+[0m11:42:46.199063 [info ] [Thread-3 (]: 2 of 2 SKIP relation main.fct_customer_transactions ............................ [[33mSKIP[0m]
+[0m11:42:46.199631 [debug] [Thread-3 (]: Finished running node model.medallion_dbt.fct_customer_transactions
+[0m11:42:46.201259 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:42:46.202027 [debug] [MainThread]: On master: BEGIN
+[0m11:42:46.202638 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:42:46.203876 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:42:46.204794 [debug] [MainThread]: On master: COMMIT
+[0m11:42:46.205383 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:42:46.205786 [debug] [MainThread]: On master: COMMIT
+[0m11:42:46.206614 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m11:42:46.207077 [debug] [MainThread]: On master: Close
+[0m11:42:46.207626 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:42:46.208039 [debug] [MainThread]: Connection 'model.medallion_dbt.stg_transactions' was properly closed.
+[0m11:42:46.208435 [info ] [MainThread]: 
+[0m11:42:46.208853 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 3.17 seconds (3.17s).
+[0m11:42:46.209642 [debug] [MainThread]: Command end result
+[0m11:42:46.238965 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m11:42:46.241704 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m11:42:46.247622 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/run_results.json
+[0m11:42:46.248062 [info ] [MainThread]: 
+[0m11:42:46.248525 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m11:42:46.249032 [info ] [MainThread]: 
+[0m11:42:46.249875 [error] [MainThread]: [31mFailure in model stg_transactions (models/staging/stg_transactions.sql)[0m
+[0m11:42:46.250674 [error] [MainThread]:   Runtime Error in model stg_transactions (models/staging/stg_transactions.sql)
+  Parser Error: syntax error at or near ")"
+  
+  LINE 16:   );
+             ^
+[0m11:42:46.251418 [info ] [MainThread]: 
+[0m11:42:46.252118 [info ] [MainThread]:   compiled code at target/compiled/medallion_dbt/models/staging/stg_transactions.sql
+[0m11:42:46.252499 [info ] [MainThread]: 
+[0m11:42:46.253037 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=1 NO-OP=0 TOTAL=2
+[0m11:42:46.254154 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m11:42:46.256144 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 5.512232, "process_in_blocks": "22136", "process_kernel_time": 0.316222, "process_mem_max_rss": "205236", "process_out_blocks": "45024", "process_user_time": 7.125944}
+[0m11:42:46.257224 [debug] [MainThread]: Command `dbt run` failed at 11:42:46.257063 after 5.51 seconds
+[0m11:42:46.258039 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bc52d1ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bc36141a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2bc3615a30>]}
+[0m11:42:46.258702 [debug] [MainThread]: Flushing usage events
+[0m11:42:47.140978 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:53:54.783683 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a7584cc650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a7584ce9c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a7584cd1f0>]}
+
+
+============================== 11:53:54.789131 | aa3b4873-ae36-4520-b4b8-e991c97e4f5e ==============================
+[0m11:53:54.789131 [info ] [MainThread]: Running with dbt=1.10.15
+[0m11:53:54.790041 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'introspect': 'True', 'target_path': 'None', 'empty': 'False', 'indirect_selection': 'eager', 'quiet': 'False', 'no_print': 'None', 'cache_selected_only': 'False', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'warn_error': 'None', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'printer_width': '80', 'partial_parse': 'True', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'static_parser': 'True', 'profiles_dir': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/profiles', 'invocation_command': 'dbt run --project-dir /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt', 'version_check': 'True', 'log_format': 'default', 'debug': 'False'}
+[0m11:53:55.192350 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'aa3b4873-ae36-4520-b4b8-e991c97e4f5e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a7574ff800>]}
+[0m11:53:55.274194 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'aa3b4873-ae36-4520-b4b8-e991c97e4f5e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a759c2dd00>]}
+[0m11:53:55.275877 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m11:53:55.406906 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m11:53:55.530003 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:53:55.530461 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:53:55.578102 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'aa3b4873-ae36-4520-b4b8-e991c97e4f5e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a7574abd10>]}
+[0m11:53:55.665017 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m11:53:55.667049 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m11:53:55.682735 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'aa3b4873-ae36-4520-b4b8-e991c97e4f5e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a750e653a0>]}
+[0m11:53:55.683563 [info ] [MainThread]: Found 2 models, 16 data tests, 469 macros
+[0m11:53:55.684302 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'aa3b4873-ae36-4520-b4b8-e991c97e4f5e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a750e25ee0>]}
+[0m11:53:55.687525 [info ] [MainThread]: 
+[0m11:53:55.688356 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:53:55.689087 [info ] [MainThread]: 
+[0m11:53:55.689956 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m11:53:55.694796 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_medallion'
+[0m11:53:55.740833 [debug] [ThreadPool]: Using duckdb connection "list_medallion"
+[0m11:53:55.741458 [debug] [ThreadPool]: On list_medallion: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"medallion"'
+    
+  
+  
+[0m11:53:55.741932 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:53:55.770412 [debug] [ThreadPool]: SQL status: OK in 0.028 seconds
+[0m11:53:55.772903 [debug] [ThreadPool]: On list_medallion: Close
+[0m11:53:55.773828 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_medallion, now create_medallion_main)
+[0m11:53:55.774603 [debug] [ThreadPool]: Creating schema "database: "medallion"
+schema: "main"
+"
+[0m11:53:55.781855 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m11:53:55.782343 [debug] [ThreadPool]: On create_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "create_medallion_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='medallion'
+        and type='sqlite'
+    
+  
+[0m11:53:55.782799 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:53:55.784671 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:53:55.787109 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m11:53:55.788069 [debug] [ThreadPool]: On create_medallion_main: BEGIN
+[0m11:53:55.789376 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:53:55.790102 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m11:53:55.790546 [debug] [ThreadPool]: On create_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "create_medallion_main"} */
+
+    
+    
+        create schema if not exists "medallion"."main"
+    
+[0m11:53:55.791283 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m11:53:55.792420 [debug] [ThreadPool]: On create_medallion_main: COMMIT
+[0m11:53:55.792957 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m11:53:55.793408 [debug] [ThreadPool]: On create_medallion_main: COMMIT
+[0m11:53:55.794245 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m11:53:55.794694 [debug] [ThreadPool]: On create_medallion_main: Close
+[0m11:53:55.796108 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_medallion_main, now list_medallion_main)
+[0m11:53:55.803167 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m11:53:55.804076 [debug] [ThreadPool]: On list_medallion_main: BEGIN
+[0m11:53:55.804893 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:53:55.806257 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:53:55.806726 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m11:53:55.807195 [debug] [ThreadPool]: On list_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion_main"} */
+select
+      'medallion' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'medallion'
+  
+[0m11:53:55.824028 [debug] [ThreadPool]: SQL status: OK in 0.016 seconds
+[0m11:53:55.825444 [debug] [ThreadPool]: On list_medallion_main: ROLLBACK
+[0m11:53:55.826653 [debug] [ThreadPool]: Failed to rollback 'list_medallion_main'
+[0m11:53:55.827048 [debug] [ThreadPool]: On list_medallion_main: Close
+[0m11:53:55.827816 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'aa3b4873-ae36-4520-b4b8-e991c97e4f5e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a75197c320>]}
+[0m11:53:55.828416 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:53:55.828832 [debug] [MainThread]: On master: BEGIN
+[0m11:53:55.829261 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:53:55.830070 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:53:55.830500 [debug] [MainThread]: On master: COMMIT
+[0m11:53:55.830924 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:53:55.831321 [debug] [MainThread]: On master: COMMIT
+[0m11:53:55.831998 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m11:53:55.832697 [debug] [MainThread]: On master: Close
+[0m11:53:55.836585 [debug] [Thread-1 (]: Began running node model.medallion_dbt.stg_transactions
+[0m11:53:55.837829 [info ] [Thread-1 (]: 1 of 2 START sql view model main.stg_transactions .............................. [RUN]
+[0m11:53:55.838685 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_medallion_main, now model.medallion_dbt.stg_transactions)
+[0m11:53:55.839319 [debug] [Thread-1 (]: Began compiling node model.medallion_dbt.stg_transactions
+[0m11:53:55.849302 [debug] [Thread-1 (]: Writing injected SQL for node "model.medallion_dbt.stg_transactions"
+[0m11:53:55.850677 [debug] [Thread-1 (]: Began executing node model.medallion_dbt.stg_transactions
+[0m11:53:55.886729 [debug] [Thread-1 (]: Writing runtime sql for node "model.medallion_dbt.stg_transactions"
+[0m11:53:55.887655 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m11:53:55.888215 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: BEGIN
+[0m11:53:55.888665 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:53:55.889926 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:53:55.890468 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m11:53:55.890999 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.stg_transactions"} */
+
+  
+  create view "medallion"."main"."stg_transactions__dbt_tmp" as (
+    
+
+
+with source as (
+    select *
+    from read_parquet(
+        '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/data/clean/transactions_20251201_clean.parquet'
+    )
+)
+
+-- TODO: Completar el modelo para que cree la tabla staging con los tipos adecuados segun el schema.yml.
+  );
+
+[0m11:53:55.900277 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.stg_transactions"} */
+
+  
+  create view "medallion"."main"."stg_transactions__dbt_tmp" as (
+    
+
+
+with source as (
+    select *
+    from read_parquet(
+        '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/data/clean/transactions_20251201_clean.parquet'
+    )
+)
+
+-- TODO: Completar el modelo para que cree la tabla staging con los tipos adecuados segun el schema.yml.
+  );
+
+[0m11:53:55.901413 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m11:53:55.902610 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: ROLLBACK
+[0m11:53:55.908872 [debug] [Thread-1 (]: Failed to rollback 'model.medallion_dbt.stg_transactions'
+[0m11:53:55.909402 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: Close
+[0m11:53:55.912139 [debug] [Thread-1 (]: Runtime Error in model stg_transactions (models/staging/stg_transactions.sql)
+  Parser Error: syntax error at or near ")"
+  
+  LINE 16:   );
+             ^
+[0m11:53:55.913771 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'aa3b4873-ae36-4520-b4b8-e991c97e4f5e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a75745c9e0>]}
+[0m11:53:55.914498 [error] [Thread-1 (]: 1 of 2 ERROR creating sql view model main.stg_transactions ..................... [[31mERROR[0m in 0.07s]
+[0m11:53:55.915294 [debug] [Thread-1 (]: Finished running node model.medallion_dbt.stg_transactions
+[0m11:53:55.915951 [debug] [Thread-7 (]: Marking all children of 'model.medallion_dbt.stg_transactions' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_transactions (models/staging/stg_transactions.sql)
+  Parser Error: syntax error at or near ")"
+  
+  LINE 16:   );
+             ^.
+[0m11:53:55.917542 [debug] [Thread-3 (]: Began running node model.medallion_dbt.fct_customer_transactions
+[0m11:53:55.918449 [info ] [Thread-3 (]: 2 of 2 SKIP relation main.fct_customer_transactions ............................ [[33mSKIP[0m]
+[0m11:53:55.919172 [debug] [Thread-3 (]: Finished running node model.medallion_dbt.fct_customer_transactions
+[0m11:53:55.920490 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:53:55.921172 [debug] [MainThread]: On master: BEGIN
+[0m11:53:55.921787 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:53:55.922789 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:53:55.923306 [debug] [MainThread]: On master: COMMIT
+[0m11:53:55.923729 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:53:55.924223 [debug] [MainThread]: On master: COMMIT
+[0m11:53:55.924948 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m11:53:55.925370 [debug] [MainThread]: On master: Close
+[0m11:53:55.925891 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:53:55.926291 [debug] [MainThread]: Connection 'model.medallion_dbt.stg_transactions' was properly closed.
+[0m11:53:55.926712 [info ] [MainThread]: 
+[0m11:53:55.927151 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 0.24 seconds (0.24s).
+[0m11:53:55.927957 [debug] [MainThread]: Command end result
+[0m11:53:55.960835 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m11:53:55.962846 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m11:53:55.969965 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/run_results.json
+[0m11:53:55.970720 [info ] [MainThread]: 
+[0m11:53:55.971441 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m11:53:55.971905 [info ] [MainThread]: 
+[0m11:53:55.973021 [error] [MainThread]: [31mFailure in model stg_transactions (models/staging/stg_transactions.sql)[0m
+[0m11:53:55.973995 [error] [MainThread]:   Runtime Error in model stg_transactions (models/staging/stg_transactions.sql)
+  Parser Error: syntax error at or near ")"
+  
+  LINE 16:   );
+             ^
+[0m11:53:55.974446 [info ] [MainThread]: 
+[0m11:53:55.975002 [info ] [MainThread]:   compiled code at target/compiled/medallion_dbt/models/staging/stg_transactions.sql
+[0m11:53:55.975440 [info ] [MainThread]: 
+[0m11:53:55.975941 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=1 NO-OP=0 TOTAL=2
+[0m11:53:55.977244 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.2637677, "process_in_blocks": "81840", "process_kernel_time": 0.245318, "process_mem_max_rss": "152128", "process_out_blocks": "2176", "process_user_time": 2.72643}
+[0m11:53:55.977771 [debug] [MainThread]: Command `dbt run` failed at 11:53:55.977666 after 1.26 seconds
+[0m11:53:55.978219 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a75bf2ba10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a75851c8f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a759da49e0>]}
+[0m11:53:55.978646 [debug] [MainThread]: Flushing usage events
+[0m11:53:56.945817 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:58:59.380034 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730daf8ed640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730daf01fcb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730daf01fef0>]}
+
+
+============================== 11:58:59.383421 | 17e571bc-f28c-45c8-8fdd-a4d73ffd2723 ==============================
+[0m11:58:59.383421 [info ] [MainThread]: Running with dbt=1.10.15
+[0m11:58:59.384096 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'quiet': 'False', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'fail_fast': 'False', 'invocation_command': 'dbt run --project-dir /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt', 'no_print': 'None', 'static_parser': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'target_path': 'None', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/profiles', 'write_json': 'True', 'use_colors': 'True', 'printer_width': '80', 'version_check': 'True'}
+[0m11:58:59.669954 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '17e571bc-f28c-45c8-8fdd-a4d73ffd2723', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730da93db950>]}
+[0m11:58:59.751250 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '17e571bc-f28c-45c8-8fdd-a4d73ffd2723', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730daf5590a0>]}
+[0m11:58:59.753322 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m11:58:59.863728 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m11:58:59.984622 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:58:59.985078 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:59:00.035218 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '17e571bc-f28c-45c8-8fdd-a4d73ffd2723', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730da92e5cd0>]}
+[0m11:59:00.130105 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m11:59:00.131896 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m11:59:00.147651 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '17e571bc-f28c-45c8-8fdd-a4d73ffd2723', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730da8765220>]}
+[0m11:59:00.148216 [info ] [MainThread]: Found 2 models, 16 data tests, 469 macros
+[0m11:59:00.148631 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '17e571bc-f28c-45c8-8fdd-a4d73ffd2723', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730da92d6f60>]}
+[0m11:59:00.150680 [info ] [MainThread]: 
+[0m11:59:00.151199 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:59:00.151781 [info ] [MainThread]: 
+[0m11:59:00.152550 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m11:59:00.159223 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_medallion'
+[0m11:59:00.201009 [debug] [ThreadPool]: Using duckdb connection "list_medallion"
+[0m11:59:00.201493 [debug] [ThreadPool]: On list_medallion: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"medallion"'
+    
+  
+  
+[0m11:59:00.202119 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:59:00.218293 [debug] [ThreadPool]: SQL status: OK in 0.016 seconds
+[0m11:59:00.220765 [debug] [ThreadPool]: On list_medallion: Close
+[0m11:59:00.221994 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_medallion, now create_medallion_main)
+[0m11:59:00.223005 [debug] [ThreadPool]: Creating schema "database: "medallion"
+schema: "main"
+"
+[0m11:59:00.230356 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m11:59:00.230867 [debug] [ThreadPool]: On create_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "create_medallion_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='medallion'
+        and type='sqlite'
+    
+  
+[0m11:59:00.231297 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:59:00.232548 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:59:00.234054 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m11:59:00.234485 [debug] [ThreadPool]: On create_medallion_main: BEGIN
+[0m11:59:00.235421 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:59:00.235951 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m11:59:00.236674 [debug] [ThreadPool]: On create_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "create_medallion_main"} */
+
+    
+    
+        create schema if not exists "medallion"."main"
+    
+[0m11:59:00.237633 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m11:59:00.239302 [debug] [ThreadPool]: On create_medallion_main: COMMIT
+[0m11:59:00.240111 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m11:59:00.240590 [debug] [ThreadPool]: On create_medallion_main: COMMIT
+[0m11:59:00.241389 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m11:59:00.242064 [debug] [ThreadPool]: On create_medallion_main: Close
+[0m11:59:00.243791 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_medallion_main, now list_medallion_main)
+[0m11:59:00.249465 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m11:59:00.249964 [debug] [ThreadPool]: On list_medallion_main: BEGIN
+[0m11:59:00.250383 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:59:00.251270 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:59:00.251723 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m11:59:00.252200 [debug] [ThreadPool]: On list_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion_main"} */
+select
+      'medallion' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'medallion'
+  
+[0m11:59:00.267312 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m11:59:00.268843 [debug] [ThreadPool]: On list_medallion_main: ROLLBACK
+[0m11:59:00.271160 [debug] [ThreadPool]: Failed to rollback 'list_medallion_main'
+[0m11:59:00.271834 [debug] [ThreadPool]: On list_medallion_main: Close
+[0m11:59:00.272871 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '17e571bc-f28c-45c8-8fdd-a4d73ffd2723', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730da933ce30>]}
+[0m11:59:00.273952 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:59:00.274697 [debug] [MainThread]: On master: BEGIN
+[0m11:59:00.275361 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:59:00.276233 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:59:00.276665 [debug] [MainThread]: On master: COMMIT
+[0m11:59:00.277104 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:59:00.277504 [debug] [MainThread]: On master: COMMIT
+[0m11:59:00.278166 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m11:59:00.278583 [debug] [MainThread]: On master: Close
+[0m11:59:00.281325 [debug] [Thread-1 (]: Began running node model.medallion_dbt.stg_transactions
+[0m11:59:00.282035 [info ] [Thread-1 (]: 1 of 2 START sql view model main.stg_transactions .............................. [RUN]
+[0m11:59:00.282599 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_medallion_main, now model.medallion_dbt.stg_transactions)
+[0m11:59:00.283082 [debug] [Thread-1 (]: Began compiling node model.medallion_dbt.stg_transactions
+[0m11:59:00.294340 [debug] [Thread-1 (]: Writing injected SQL for node "model.medallion_dbt.stg_transactions"
+[0m11:59:00.295092 [debug] [Thread-1 (]: Began executing node model.medallion_dbt.stg_transactions
+[0m11:59:00.330847 [debug] [Thread-1 (]: Writing runtime sql for node "model.medallion_dbt.stg_transactions"
+[0m11:59:00.331687 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m11:59:00.332196 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: BEGIN
+[0m11:59:00.332691 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:59:00.333873 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:59:00.334394 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m11:59:00.334949 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.stg_transactions"} */
+
+  
+  create view "medallion"."main"."stg_transactions__dbt_tmp" as (
+    
+
+
+with source as (
+    select *
+    from read_parquet(
+        '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/data/clean/transactions_20251201_clean.parquet'
+    )
+)
+
+-- TODO: Completar el modelo para que cree la tabla staging con los tipos adecuados segun el schema.yml.
+  );
+
+[0m11:59:00.335929 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.stg_transactions"} */
+
+  
+  create view "medallion"."main"."stg_transactions__dbt_tmp" as (
+    
+
+
+with source as (
+    select *
+    from read_parquet(
+        '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/data/clean/transactions_20251201_clean.parquet'
+    )
+)
+
+-- TODO: Completar el modelo para que cree la tabla staging con los tipos adecuados segun el schema.yml.
+  );
+
+[0m11:59:00.336566 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m11:59:00.337263 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: ROLLBACK
+[0m11:59:00.343028 [debug] [Thread-1 (]: Failed to rollback 'model.medallion_dbt.stg_transactions'
+[0m11:59:00.343715 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: Close
+[0m11:59:00.346714 [debug] [Thread-1 (]: Runtime Error in model stg_transactions (models/staging/stg_transactions.sql)
+  Parser Error: syntax error at or near ")"
+  
+  LINE 16:   );
+             ^
+[0m11:59:00.348612 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '17e571bc-f28c-45c8-8fdd-a4d73ffd2723', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730da9371be0>]}
+[0m11:59:00.349504 [error] [Thread-1 (]: 1 of 2 ERROR creating sql view model main.stg_transactions ..................... [[31mERROR[0m in 0.06s]
+[0m11:59:00.350335 [debug] [Thread-1 (]: Finished running node model.medallion_dbt.stg_transactions
+[0m11:59:00.351249 [debug] [Thread-7 (]: Marking all children of 'model.medallion_dbt.stg_transactions' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_transactions (models/staging/stg_transactions.sql)
+  Parser Error: syntax error at or near ")"
+  
+  LINE 16:   );
+             ^.
+[0m11:59:00.353795 [debug] [Thread-3 (]: Began running node model.medallion_dbt.fct_customer_transactions
+[0m11:59:00.354590 [info ] [Thread-3 (]: 2 of 2 SKIP relation main.fct_customer_transactions ............................ [[33mSKIP[0m]
+[0m11:59:00.355726 [debug] [Thread-3 (]: Finished running node model.medallion_dbt.fct_customer_transactions
+[0m11:59:00.358045 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:59:00.358904 [debug] [MainThread]: On master: BEGIN
+[0m11:59:00.359650 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:59:00.360748 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:59:00.361570 [debug] [MainThread]: On master: COMMIT
+[0m11:59:00.362068 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:59:00.362705 [debug] [MainThread]: On master: COMMIT
+[0m11:59:00.363733 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m11:59:00.364268 [debug] [MainThread]: On master: Close
+[0m11:59:00.364834 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:59:00.365265 [debug] [MainThread]: Connection 'model.medallion_dbt.stg_transactions' was properly closed.
+[0m11:59:00.365733 [info ] [MainThread]: 
+[0m11:59:00.366232 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 0.21 seconds (0.21s).
+[0m11:59:00.367152 [debug] [MainThread]: Command end result
+[0m11:59:00.399336 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m11:59:00.401410 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m11:59:00.410280 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/run_results.json
+[0m11:59:00.410784 [info ] [MainThread]: 
+[0m11:59:00.411387 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m11:59:00.411867 [info ] [MainThread]: 
+[0m11:59:00.412460 [error] [MainThread]: [31mFailure in model stg_transactions (models/staging/stg_transactions.sql)[0m
+[0m11:59:00.413025 [error] [MainThread]:   Runtime Error in model stg_transactions (models/staging/stg_transactions.sql)
+  Parser Error: syntax error at or near ")"
+  
+  LINE 16:   );
+             ^
+[0m11:59:00.413472 [info ] [MainThread]: 
+[0m11:59:00.414137 [info ] [MainThread]:   compiled code at target/compiled/medallion_dbt/models/staging/stg_transactions.sql
+[0m11:59:00.414594 [info ] [MainThread]: 
+[0m11:59:00.415107 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=1 NO-OP=0 TOTAL=2
+[0m11:59:00.416207 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.1208127, "process_in_blocks": "0", "process_kernel_time": 0.197672, "process_mem_max_rss": "152072", "process_out_blocks": "2176", "process_user_time": 2.707519}
+[0m11:59:00.417274 [debug] [MainThread]: Command `dbt run` failed at 11:59:00.417113 after 1.12 seconds
+[0m11:59:00.417999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730daf329280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730daee8b140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730daee8bcb0>]}
+[0m11:59:00.418843 [debug] [MainThread]: Flushing usage events
+[0m11:59:01.774003 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:11:45.618986 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c644d869f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c644895880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c6446e3530>]}
+
+
+============================== 12:11:45.623200 | 835b502b-c705-4500-8a8c-950c9cd5aa43 ==============================
+[0m12:11:45.623200 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:11:45.624027 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'log_format': 'default', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run --project-dir /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt', 'warn_error': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/profiles', 'empty': 'False', 'use_colors': 'True', 'no_print': 'None', 'fail_fast': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'target_path': 'None', 'introspect': 'True', 'log_cache_events': 'False', 'write_json': 'True', 'version_check': 'True', 'printer_width': '80'}
+[0m12:11:45.927624 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '835b502b-c705-4500-8a8c-950c9cd5aa43', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c643dd5010>]}
+[0m12:11:46.011948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '835b502b-c705-4500-8a8c-950c9cd5aa43', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c643c771a0>]}
+[0m12:11:46.013658 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m12:11:46.133450 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m12:11:46.261199 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m12:11:46.262032 [debug] [MainThread]: Partial parsing: updated file: medallion_dbt://models/marts/fct_customer_transactions.sql
+[0m12:11:46.262592 [debug] [MainThread]: Partial parsing: updated file: medallion_dbt://models/staging/stg_transactions.sql
+[0m12:11:46.778755 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values`. Arguments to generic tests
+should be nested under the `arguments` property.`
+[0m12:11:46.779331 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '835b502b-c705-4500-8a8c-950c9cd5aa43', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c63d624f50>]}
+[0m12:11:46.850313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '835b502b-c705-4500-8a8c-950c9cd5aa43', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c63ccb9bb0>]}
+[0m12:11:47.045449 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m12:11:47.048007 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m12:11:47.063573 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '835b502b-c705-4500-8a8c-950c9cd5aa43', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c63cc1b7d0>]}
+[0m12:11:47.064152 [info ] [MainThread]: Found 2 models, 16 data tests, 469 macros
+[0m12:11:47.064614 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '835b502b-c705-4500-8a8c-950c9cd5aa43', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c63cce23f0>]}
+[0m12:11:47.067392 [info ] [MainThread]: 
+[0m12:11:47.068216 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:11:47.068989 [info ] [MainThread]: 
+[0m12:11:47.069787 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:11:47.075659 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_medallion'
+[0m12:11:47.118655 [debug] [ThreadPool]: Using duckdb connection "list_medallion"
+[0m12:11:47.119331 [debug] [ThreadPool]: On list_medallion: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"medallion"'
+    
+  
+  
+[0m12:11:47.119848 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:11:47.137556 [debug] [ThreadPool]: SQL status: OK in 0.018 seconds
+[0m12:11:47.139881 [debug] [ThreadPool]: On list_medallion: Close
+[0m12:11:47.140694 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_medallion, now create_medallion_main)
+[0m12:11:47.141243 [debug] [ThreadPool]: Creating schema "database: "medallion"
+schema: "main"
+"
+[0m12:11:47.148019 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m12:11:47.148519 [debug] [ThreadPool]: On create_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "create_medallion_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='medallion'
+        and type='sqlite'
+    
+  
+[0m12:11:47.149195 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:11:47.150621 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:11:47.153351 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m12:11:47.153805 [debug] [ThreadPool]: On create_medallion_main: BEGIN
+[0m12:11:47.154618 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:11:47.155387 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m12:11:47.156144 [debug] [ThreadPool]: On create_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "create_medallion_main"} */
+
+    
+    
+        create schema if not exists "medallion"."main"
+    
+[0m12:11:47.157305 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:11:47.158537 [debug] [ThreadPool]: On create_medallion_main: COMMIT
+[0m12:11:47.158943 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m12:11:47.159313 [debug] [ThreadPool]: On create_medallion_main: COMMIT
+[0m12:11:47.160031 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:11:47.160429 [debug] [ThreadPool]: On create_medallion_main: Close
+[0m12:11:47.161947 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_medallion_main, now list_medallion_main)
+[0m12:11:47.168147 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m12:11:47.168884 [debug] [ThreadPool]: On list_medallion_main: BEGIN
+[0m12:11:47.169659 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:11:47.170855 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:11:47.171648 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m12:11:47.172215 [debug] [ThreadPool]: On list_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion_main"} */
+select
+      'medallion' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'medallion'
+  
+[0m12:11:47.186490 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m12:11:47.188372 [debug] [ThreadPool]: On list_medallion_main: ROLLBACK
+[0m12:11:47.189665 [debug] [ThreadPool]: Failed to rollback 'list_medallion_main'
+[0m12:11:47.190092 [debug] [ThreadPool]: On list_medallion_main: Close
+[0m12:11:47.190844 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '835b502b-c705-4500-8a8c-950c9cd5aa43', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c63cd1d400>]}
+[0m12:11:47.191405 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:11:47.191779 [debug] [MainThread]: On master: BEGIN
+[0m12:11:47.192144 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:11:47.193017 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:11:47.193415 [debug] [MainThread]: On master: COMMIT
+[0m12:11:47.193787 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:11:47.194158 [debug] [MainThread]: On master: COMMIT
+[0m12:11:47.194766 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:11:47.195166 [debug] [MainThread]: On master: Close
+[0m12:11:47.200161 [debug] [Thread-1 (]: Began running node model.medallion_dbt.stg_transactions
+[0m12:11:47.200839 [info ] [Thread-1 (]: 1 of 2 START sql view model main.stg_transactions .............................. [RUN]
+[0m12:11:47.201761 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_medallion_main, now model.medallion_dbt.stg_transactions)
+[0m12:11:47.202732 [debug] [Thread-1 (]: Began compiling node model.medallion_dbt.stg_transactions
+[0m12:11:47.213485 [debug] [Thread-1 (]: Writing injected SQL for node "model.medallion_dbt.stg_transactions"
+[0m12:11:47.214200 [debug] [Thread-1 (]: Began executing node model.medallion_dbt.stg_transactions
+[0m12:11:47.253183 [debug] [Thread-1 (]: Writing runtime sql for node "model.medallion_dbt.stg_transactions"
+[0m12:11:47.254006 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m12:11:47.254458 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: BEGIN
+[0m12:11:47.254861 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:11:47.255780 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:11:47.256365 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m12:11:47.256833 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.stg_transactions"} */
+
+  
+  create view "medallion"."main"."stg_transactions__dbt_tmp" as (
+    
+
+
+with source as (
+    select *
+    from read_parquet(
+        '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/data/clean/transactions_20251201_clean.parquet'
+    )
+)
+
+-- TODO: Completar el modelo para que cree la tabla staging con los tipos adecuados segun el schema.yml.
+
+select
+    cast(transaction_id as integer) as transaction_id,
+    cast(customer_id as integer) as customer_id,
+    cast(amount as decimal(10, 2)) as amount,
+    cast(status as varchar) as status,
+    cast(transaction_ts as timestamp) as transaction_ts,
+    cast(transaction_date as date) as transaction_date
+from source
+  );
+
+[0m12:11:47.260005 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:11:47.266849 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m12:11:47.267372 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.stg_transactions"} */
+alter view "medallion"."main"."stg_transactions__dbt_tmp" rename to "stg_transactions"
+[0m12:11:47.268633 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:11:47.280244 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: COMMIT
+[0m12:11:47.280810 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m12:11:47.281535 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: COMMIT
+[0m12:11:47.283806 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:11:47.292857 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m12:11:47.293680 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.stg_transactions"} */
+
+      drop view if exists "medallion"."main"."stg_transactions__dbt_backup" cascade
+    
+[0m12:11:47.295194 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:11:47.299423 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: Close
+[0m12:11:47.302423 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '835b502b-c705-4500-8a8c-950c9cd5aa43', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c63cd59a90>]}
+[0m12:11:47.303881 [info ] [Thread-1 (]: 1 of 2 OK created sql view model main.stg_transactions ......................... [[32mOK[0m in 0.10s]
+[0m12:11:47.305160 [debug] [Thread-1 (]: Finished running node model.medallion_dbt.stg_transactions
+[0m12:11:47.306557 [debug] [Thread-3 (]: Began running node model.medallion_dbt.fct_customer_transactions
+[0m12:11:47.307665 [info ] [Thread-3 (]: 2 of 2 START sql table model main.fct_customer_transactions .................... [RUN]
+[0m12:11:47.309152 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.medallion_dbt.fct_customer_transactions'
+[0m12:11:47.310196 [debug] [Thread-3 (]: Began compiling node model.medallion_dbt.fct_customer_transactions
+[0m12:11:47.313861 [debug] [Thread-3 (]: Writing injected SQL for node "model.medallion_dbt.fct_customer_transactions"
+[0m12:11:47.314653 [debug] [Thread-3 (]: Began executing node model.medallion_dbt.fct_customer_transactions
+[0m12:11:47.339345 [debug] [Thread-3 (]: Writing runtime sql for node "model.medallion_dbt.fct_customer_transactions"
+[0m12:11:47.340240 [debug] [Thread-3 (]: Using duckdb connection "model.medallion_dbt.fct_customer_transactions"
+[0m12:11:47.340758 [debug] [Thread-3 (]: On model.medallion_dbt.fct_customer_transactions: BEGIN
+[0m12:11:47.341244 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:11:47.342314 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:11:47.342843 [debug] [Thread-3 (]: Using duckdb connection "model.medallion_dbt.fct_customer_transactions"
+[0m12:11:47.343339 [debug] [Thread-3 (]: On model.medallion_dbt.fct_customer_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.fct_customer_transactions"} */
+
+  
+    
+    
+
+    create  table
+      "medallion"."main"."fct_customer_transactions__dbt_tmp"
+  
+    as (
+      with base as (
+    select * from "medallion"."main"."stg_transactions"
+)
+
+-- TODO: Completar el modelo para que cree la tabla fct_customer_transactions con las metricas en schema.yml.
+
+
+# queries
+select
+    customer_id,
+    count(*) as transaction_count,
+    sum(case when status = 'completed' then amount else 0 end) as total_amount_completed,
+    sum(amount) as total_amount_all
+from base
+group by customer_id
+    );
+  
+  
+[0m12:11:47.344241 [debug] [Thread-3 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.fct_customer_transactions"} */
+
+  
+    
+    
+
+    create  table
+      "medallion"."main"."fct_customer_transactions__dbt_tmp"
+  
+    as (
+      with base as (
+    select * from "medallion"."main"."stg_transactions"
+)
+
+-- TODO: Completar el modelo para que cree la tabla fct_customer_transactions con las metricas en schema.yml.
+
+
+# queries
+select
+    customer_id,
+    count(*) as transaction_count,
+    sum(case when status = 'completed' then amount else 0 end) as total_amount_completed,
+    sum(amount) as total_amount_all
+from base
+group by customer_id
+    );
+  
+  
+[0m12:11:47.344778 [debug] [Thread-3 (]: DuckDB adapter: Rolling back transaction.
+[0m12:11:47.345390 [debug] [Thread-3 (]: On model.medallion_dbt.fct_customer_transactions: ROLLBACK
+[0m12:11:47.349850 [debug] [Thread-3 (]: Failed to rollback 'model.medallion_dbt.fct_customer_transactions'
+[0m12:11:47.350419 [debug] [Thread-3 (]: On model.medallion_dbt.fct_customer_transactions: Close
+[0m12:11:47.353795 [debug] [Thread-3 (]: Runtime Error in model fct_customer_transactions (models/marts/fct_customer_transactions.sql)
+  Parser Error: syntax error at or near "#"
+  
+  LINE 18: # queries
+           ^
+[0m12:11:47.354456 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '835b502b-c705-4500-8a8c-950c9cd5aa43', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c63c2b6c90>]}
+[0m12:11:47.355394 [error] [Thread-3 (]: 2 of 2 ERROR creating sql table model main.fct_customer_transactions ........... [[31mERROR[0m in 0.05s]
+[0m12:11:47.356354 [debug] [Thread-3 (]: Finished running node model.medallion_dbt.fct_customer_transactions
+[0m12:11:47.357534 [debug] [Thread-7 (]: Marking all children of 'model.medallion_dbt.fct_customer_transactions' to be skipped because of status 'error'.  Reason: Runtime Error in model fct_customer_transactions (models/marts/fct_customer_transactions.sql)
+  Parser Error: syntax error at or near "#"
+  
+  LINE 18: # queries
+           ^.
+[0m12:11:47.360923 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:11:47.361805 [debug] [MainThread]: On master: BEGIN
+[0m12:11:47.362579 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:11:47.363922 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:11:47.364645 [debug] [MainThread]: On master: COMMIT
+[0m12:11:47.365298 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:11:47.365923 [debug] [MainThread]: On master: COMMIT
+[0m12:11:47.367064 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:11:47.367722 [debug] [MainThread]: On master: Close
+[0m12:11:47.368655 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:11:47.369447 [debug] [MainThread]: Connection 'model.medallion_dbt.stg_transactions' was properly closed.
+[0m12:11:47.370219 [debug] [MainThread]: Connection 'model.medallion_dbt.fct_customer_transactions' was properly closed.
+[0m12:11:47.370960 [info ] [MainThread]: 
+[0m12:11:47.371649 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 0.30 seconds (0.30s).
+[0m12:11:47.373221 [debug] [MainThread]: Command end result
+[0m12:11:47.413033 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m12:11:47.414768 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m12:11:47.422440 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/run_results.json
+[0m12:11:47.422885 [info ] [MainThread]: 
+[0m12:11:47.423362 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m12:11:47.423998 [info ] [MainThread]: 
+[0m12:11:47.424490 [error] [MainThread]: [31mFailure in model fct_customer_transactions (models/marts/fct_customer_transactions.sql)[0m
+[0m12:11:47.424953 [error] [MainThread]:   Runtime Error in model fct_customer_transactions (models/marts/fct_customer_transactions.sql)
+  Parser Error: syntax error at or near "#"
+  
+  LINE 18: # queries
+           ^
+[0m12:11:47.425321 [info ] [MainThread]: 
+[0m12:11:47.425762 [info ] [MainThread]:   compiled code at target/compiled/medallion_dbt/models/marts/fct_customer_transactions.sql
+[0m12:11:47.426362 [info ] [MainThread]: 
+[0m12:11:47.426780 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=2
+[0m12:11:47.427668 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m12:11:47.429033 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.8790901, "process_in_blocks": "12352", "process_kernel_time": 0.233978, "process_mem_max_rss": "157020", "process_out_blocks": "3232", "process_user_time": 3.621664}
+[0m12:11:47.429866 [debug] [MainThread]: Command `dbt run` failed at 12:11:47.429707 after 1.88 seconds
+[0m12:11:47.430358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c64635d520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c643d3c470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c63cd80560>]}
+[0m12:11:47.430787 [debug] [MainThread]: Flushing usage events
+[0m12:11:48.509488 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:16:12.076117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660c306ff20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660c3139340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660c306ccb0>]}
+
+
+============================== 12:16:12.083399 | 5eb0e820-75a3-49c2-a262-a6cca2260812 ==============================
+[0m12:16:12.083399 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:16:12.084624 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'quiet': 'False', 'target_path': 'None', 'log_cache_events': 'False', 'printer_width': '80', 'cache_selected_only': 'False', 'warn_error': 'None', 'no_print': 'None', 'write_json': 'True', 'indirect_selection': 'eager', 'log_format': 'default', 'empty': 'False', 'use_colors': 'True', 'profiles_dir': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/profiles', 'invocation_command': 'dbt run --project-dir /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt', 'static_parser': 'True', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'version_check': 'True', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'introspect': 'True', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:16:12.410759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5eb0e820-75a3-49c2-a262-a6cca2260812', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660c2de0d70>]}
+[0m12:16:12.490500 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5eb0e820-75a3-49c2-a262-a6cca2260812', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660c5794cb0>]}
+[0m12:16:12.494821 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m12:16:12.609381 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m12:16:12.775266 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m12:16:12.776091 [debug] [MainThread]: Partial parsing: updated file: medallion_dbt://models/marts/fct_customer_transactions.sql
+[0m12:16:13.313446 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5eb0e820-75a3-49c2-a262-a6cca2260812', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660bcfefd40>]}
+[0m12:16:13.396297 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m12:16:13.398395 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m12:16:13.481283 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5eb0e820-75a3-49c2-a262-a6cca2260812', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a7c521e0>]}
+[0m12:16:13.481957 [info ] [MainThread]: Found 2 models, 16 data tests, 469 macros
+[0m12:16:13.482802 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5eb0e820-75a3-49c2-a262-a6cca2260812', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660c5659b50>]}
+[0m12:16:13.485699 [info ] [MainThread]: 
+[0m12:16:13.486226 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:16:13.486633 [info ] [MainThread]: 
+[0m12:16:13.487268 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:16:13.492365 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_medallion'
+[0m12:16:13.539096 [debug] [ThreadPool]: Using duckdb connection "list_medallion"
+[0m12:16:13.539616 [debug] [ThreadPool]: On list_medallion: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"medallion"'
+    
+  
+  
+[0m12:16:13.540038 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:16:13.551461 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"medallion"'
+    
+  
+  
+[0m12:16:13.552242 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m12:16:13.553198 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:16:13.553585 [debug] [MainThread]: Connection 'list_medallion' was properly closed.
+[0m12:16:13.553976 [info ] [MainThread]: 
+[0m12:16:13.554408 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.07 seconds (0.07s).
+[0m12:16:13.555010 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Could not set lock on file "/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/warehouse/medallion.duckdb": Conflicting lock is held in /snap/duckdb/9/duckdb (PID 32729) by user sebastian. See also https://duckdb.org/docs/stable/connect/concurrency
+[0m12:16:13.556004 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.5482008, "process_in_blocks": "45776", "process_kernel_time": 0.250527, "process_mem_max_rss": "149108", "process_out_blocks": "2128", "process_user_time": 3.081589}
+[0m12:16:13.556536 [debug] [MainThread]: Command `dbt run` failed at 12:16:13.556425 after 1.55 seconds
+[0m12:16:13.556992 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660c2e78c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660c2f86c00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a7dc77d0>]}
+[0m12:16:13.557434 [debug] [MainThread]: Flushing usage events
+[0m12:16:14.745999 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:17:43.187411 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf0ffdddc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf106a7b30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf100783e0>]}
+
+
+============================== 12:17:43.192076 | 2d4c8828-e371-4bee-811a-bbcf286defcc ==============================
+[0m12:17:43.192076 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:17:43.192692 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'quiet': 'False', 'write_json': 'True', 'warn_error': 'None', 'log_cache_events': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'target_path': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'fail_fast': 'False', 'introspect': 'True', 'profiles_dir': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/profiles', 'invocation_command': 'dbt run --project-dir /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt', 'version_check': 'True', 'empty': 'False', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'printer_width': '80'}
+[0m12:17:43.443704 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2d4c8828-e371-4bee-811a-bbcf286defcc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf0fd54fe0>]}
+[0m12:17:43.513140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2d4c8828-e371-4bee-811a-bbcf286defcc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf105adeb0>]}
+[0m12:17:43.517352 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m12:17:43.620315 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m12:17:43.740587 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:17:43.741027 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:17:43.781555 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2d4c8828-e371-4bee-811a-bbcf286defcc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf0983c4d0>]}
+[0m12:17:43.860597 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m12:17:43.862565 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m12:17:43.885105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2d4c8828-e371-4bee-811a-bbcf286defcc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf0965d6a0>]}
+[0m12:17:43.885651 [info ] [MainThread]: Found 2 models, 16 data tests, 469 macros
+[0m12:17:43.886083 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2d4c8828-e371-4bee-811a-bbcf286defcc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf0989a5d0>]}
+[0m12:17:43.888116 [info ] [MainThread]: 
+[0m12:17:43.888543 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:17:43.888934 [info ] [MainThread]: 
+[0m12:17:43.889498 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:17:43.894595 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_medallion'
+[0m12:17:43.936629 [debug] [ThreadPool]: Using duckdb connection "list_medallion"
+[0m12:17:43.937147 [debug] [ThreadPool]: On list_medallion: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"medallion"'
+    
+  
+  
+[0m12:17:43.937556 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:17:43.960774 [debug] [ThreadPool]: SQL status: OK in 0.023 seconds
+[0m12:17:43.962855 [debug] [ThreadPool]: On list_medallion: Close
+[0m12:17:43.963627 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_medallion, now create_medallion_main)
+[0m12:17:43.964186 [debug] [ThreadPool]: Creating schema "database: "medallion"
+schema: "main"
+"
+[0m12:17:43.971107 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m12:17:43.971590 [debug] [ThreadPool]: On create_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "create_medallion_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='medallion'
+        and type='sqlite'
+    
+  
+[0m12:17:43.971995 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:17:43.973249 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:17:43.974770 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m12:17:43.975211 [debug] [ThreadPool]: On create_medallion_main: BEGIN
+[0m12:17:43.975965 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:17:43.976370 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m12:17:43.976787 [debug] [ThreadPool]: On create_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "create_medallion_main"} */
+
+    
+    
+        create schema if not exists "medallion"."main"
+    
+[0m12:17:43.978040 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:17:43.979165 [debug] [ThreadPool]: On create_medallion_main: COMMIT
+[0m12:17:43.979629 [debug] [ThreadPool]: Using duckdb connection "create_medallion_main"
+[0m12:17:43.980040 [debug] [ThreadPool]: On create_medallion_main: COMMIT
+[0m12:17:43.981015 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:17:43.981501 [debug] [ThreadPool]: On create_medallion_main: Close
+[0m12:17:43.982889 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_medallion_main, now list_medallion_main)
+[0m12:17:43.988744 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m12:17:43.989230 [debug] [ThreadPool]: On list_medallion_main: BEGIN
+[0m12:17:43.989615 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:17:43.990435 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:17:43.990862 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m12:17:43.991294 [debug] [ThreadPool]: On list_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion_main"} */
+select
+      'medallion' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'medallion'
+  
+[0m12:17:44.004785 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m12:17:44.006319 [debug] [ThreadPool]: On list_medallion_main: ROLLBACK
+[0m12:17:44.007870 [debug] [ThreadPool]: Failed to rollback 'list_medallion_main'
+[0m12:17:44.008299 [debug] [ThreadPool]: On list_medallion_main: Close
+[0m12:17:44.009250 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2d4c8828-e371-4bee-811a-bbcf286defcc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf0989ba10>]}
+[0m12:17:44.009808 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:44.010235 [debug] [MainThread]: On master: BEGIN
+[0m12:17:44.010600 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:17:44.011512 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:17:44.011924 [debug] [MainThread]: On master: COMMIT
+[0m12:17:44.012308 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:44.012932 [debug] [MainThread]: On master: COMMIT
+[0m12:17:44.013540 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:17:44.013939 [debug] [MainThread]: On master: Close
+[0m12:17:44.017005 [debug] [Thread-1 (]: Began running node model.medallion_dbt.stg_transactions
+[0m12:17:44.017656 [info ] [Thread-1 (]: 1 of 2 START sql view model main.stg_transactions .............................. [RUN]
+[0m12:17:44.018199 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_medallion_main, now model.medallion_dbt.stg_transactions)
+[0m12:17:44.018692 [debug] [Thread-1 (]: Began compiling node model.medallion_dbt.stg_transactions
+[0m12:17:44.028388 [debug] [Thread-1 (]: Writing injected SQL for node "model.medallion_dbt.stg_transactions"
+[0m12:17:44.029062 [debug] [Thread-1 (]: Began executing node model.medallion_dbt.stg_transactions
+[0m12:17:44.059189 [debug] [Thread-1 (]: Writing runtime sql for node "model.medallion_dbt.stg_transactions"
+[0m12:17:44.059959 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m12:17:44.060414 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: BEGIN
+[0m12:17:44.060866 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:17:44.061768 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:17:44.062240 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m12:17:44.062693 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.stg_transactions"} */
+
+  
+  create view "medallion"."main"."stg_transactions__dbt_tmp" as (
+    
+
+
+with source as (
+    select *
+    from read_parquet(
+        '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/data/clean/transactions_20251201_clean.parquet'
+    )
+)
+
+-- TODO: Completar el modelo para que cree la tabla staging con los tipos adecuados segun el schema.yml.
+
+select
+    cast(transaction_id as integer) as transaction_id,
+    cast(customer_id as integer) as customer_id,
+    cast(amount as decimal(10, 2)) as amount,
+    cast(status as varchar) as status,
+    cast(transaction_ts as timestamp) as transaction_ts,
+    cast(transaction_date as date) as transaction_date
+from source
+  );
+
+[0m12:17:44.064388 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:17:44.075675 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m12:17:44.076596 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.stg_transactions"} */
+alter view "medallion"."main"."stg_transactions" rename to "stg_transactions__dbt_backup"
+[0m12:17:44.078558 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:17:44.084451 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m12:17:44.085493 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.stg_transactions"} */
+alter view "medallion"."main"."stg_transactions__dbt_tmp" rename to "stg_transactions"
+[0m12:17:44.087589 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:17:44.107490 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: COMMIT
+[0m12:17:44.108049 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m12:17:44.108495 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: COMMIT
+[0m12:17:44.111468 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:17:44.118687 [debug] [Thread-1 (]: Using duckdb connection "model.medallion_dbt.stg_transactions"
+[0m12:17:44.119347 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.stg_transactions"} */
+
+      drop view if exists "medallion"."main"."stg_transactions__dbt_backup" cascade
+    
+[0m12:17:44.121093 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:17:44.123928 [debug] [Thread-1 (]: On model.medallion_dbt.stg_transactions: Close
+[0m12:17:44.125878 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2d4c8828-e371-4bee-811a-bbcf286defcc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf084a61e0>]}
+[0m12:17:44.126627 [info ] [Thread-1 (]: 1 of 2 OK created sql view model main.stg_transactions ......................... [[32mOK[0m in 0.11s]
+[0m12:17:44.127342 [debug] [Thread-1 (]: Finished running node model.medallion_dbt.stg_transactions
+[0m12:17:44.128394 [debug] [Thread-3 (]: Began running node model.medallion_dbt.fct_customer_transactions
+[0m12:17:44.129419 [info ] [Thread-3 (]: 2 of 2 START sql table model main.fct_customer_transactions .................... [RUN]
+[0m12:17:44.130235 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.medallion_dbt.fct_customer_transactions'
+[0m12:17:44.130707 [debug] [Thread-3 (]: Began compiling node model.medallion_dbt.fct_customer_transactions
+[0m12:17:44.135194 [debug] [Thread-3 (]: Writing injected SQL for node "model.medallion_dbt.fct_customer_transactions"
+[0m12:17:44.135900 [debug] [Thread-3 (]: Began executing node model.medallion_dbt.fct_customer_transactions
+[0m12:17:44.157887 [debug] [Thread-3 (]: Writing runtime sql for node "model.medallion_dbt.fct_customer_transactions"
+[0m12:17:44.158785 [debug] [Thread-3 (]: Using duckdb connection "model.medallion_dbt.fct_customer_transactions"
+[0m12:17:44.159417 [debug] [Thread-3 (]: On model.medallion_dbt.fct_customer_transactions: BEGIN
+[0m12:17:44.160052 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:17:44.161595 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:17:44.162398 [debug] [Thread-3 (]: Using duckdb connection "model.medallion_dbt.fct_customer_transactions"
+[0m12:17:44.162984 [debug] [Thread-3 (]: On model.medallion_dbt.fct_customer_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.fct_customer_transactions"} */
+
+  
+    
+    
+
+    create  table
+      "medallion"."main"."fct_customer_transactions__dbt_tmp"
+  
+    as (
+      with base as (
+    select * from "medallion"."main"."stg_transactions"
+)
+
+-- TODO: Completar el modelo para que cree la tabla fct_customer_transactions con las metricas en schema.yml.
+
+-- queries
+select
+    customer_id,
+    count(*) as transaction_count,
+    sum(case when status = 'completed' then amount else 0 end) as total_amount_completed,
+    sum(amount) as total_amount_all
+from base
+group by customer_id
+    );
+  
+  
+[0m12:17:44.180024 [debug] [Thread-3 (]: SQL status: OK in 0.016 seconds
+[0m12:17:44.184667 [debug] [Thread-3 (]: Using duckdb connection "model.medallion_dbt.fct_customer_transactions"
+[0m12:17:44.185268 [debug] [Thread-3 (]: On model.medallion_dbt.fct_customer_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.fct_customer_transactions"} */
+alter table "medallion"."main"."fct_customer_transactions__dbt_tmp" rename to "fct_customer_transactions"
+[0m12:17:44.186214 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:17:44.191072 [debug] [Thread-3 (]: On model.medallion_dbt.fct_customer_transactions: COMMIT
+[0m12:17:44.191559 [debug] [Thread-3 (]: Using duckdb connection "model.medallion_dbt.fct_customer_transactions"
+[0m12:17:44.191979 [debug] [Thread-3 (]: On model.medallion_dbt.fct_customer_transactions: COMMIT
+[0m12:17:44.193397 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:17:44.196129 [debug] [Thread-3 (]: Using duckdb connection "model.medallion_dbt.fct_customer_transactions"
+[0m12:17:44.196747 [debug] [Thread-3 (]: On model.medallion_dbt.fct_customer_transactions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "model.medallion_dbt.fct_customer_transactions"} */
+
+      drop table if exists "medallion"."main"."fct_customer_transactions__dbt_backup" cascade
+    
+[0m12:17:44.197851 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:17:44.200026 [debug] [Thread-3 (]: On model.medallion_dbt.fct_customer_transactions: Close
+[0m12:17:44.200896 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2d4c8828-e371-4bee-811a-bbcf286defcc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf083c7230>]}
+[0m12:17:44.201707 [info ] [Thread-3 (]: 2 of 2 OK created sql table model main.fct_customer_transactions ............... [[32mOK[0m in 0.07s]
+[0m12:17:44.202391 [debug] [Thread-3 (]: Finished running node model.medallion_dbt.fct_customer_transactions
+[0m12:17:44.203805 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:44.204537 [debug] [MainThread]: On master: BEGIN
+[0m12:17:44.205219 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:17:44.206340 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:17:44.206750 [debug] [MainThread]: On master: COMMIT
+[0m12:17:44.207150 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:44.207510 [debug] [MainThread]: On master: COMMIT
+[0m12:17:44.208139 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:17:44.208545 [debug] [MainThread]: On master: Close
+[0m12:17:44.209046 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:17:44.209401 [debug] [MainThread]: Connection 'model.medallion_dbt.stg_transactions' was properly closed.
+[0m12:17:44.209738 [debug] [MainThread]: Connection 'model.medallion_dbt.fct_customer_transactions' was properly closed.
+[0m12:17:44.210135 [info ] [MainThread]: 
+[0m12:17:44.210562 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 0.32 seconds (0.32s).
+[0m12:17:44.212088 [debug] [MainThread]: Command end result
+[0m12:17:44.240361 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m12:17:44.242105 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m12:17:44.248739 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/run_results.json
+[0m12:17:44.249557 [info ] [MainThread]: 
+[0m12:17:44.250350 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:17:44.250824 [info ] [MainThread]: 
+[0m12:17:44.251321 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m12:17:44.252310 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.1254659, "process_in_blocks": "48944", "process_kernel_time": 0.232445, "process_mem_max_rss": "154832", "process_out_blocks": "2240", "process_user_time": 2.483027}
+[0m12:17:44.252902 [debug] [MainThread]: Command `dbt run` succeeded at 12:17:44.252771 after 1.13 seconds
+[0m12:17:44.253478 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf0fc82a20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf1046c770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cdf09a49e80>]}
+[0m12:17:44.253986 [debug] [MainThread]: Flushing usage events
+[0m12:17:45.475389 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:17:49.038711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc2681b7080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc267eb8680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc267bb3f80>]}
+
+
+============================== 12:17:49.041982 | 8052a754-e177-422d-a173-297aacee98f0 ==============================
+[0m12:17:49.041982 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:17:49.042636 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'warn_error': 'None', 'log_format': 'default', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'static_parser': 'True', 'use_colors': 'True', 'fail_fast': 'False', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'partial_parse': 'True', 'debug': 'False', 'quiet': 'False', 'printer_width': '80', 'introspect': 'True', 'no_print': 'None', 'profiles_dir': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/profiles', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt test --project-dir /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt', 'cache_selected_only': 'False', 'empty': 'None'}
+[0m12:17:49.400061 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8052a754-e177-422d-a173-297aacee98f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc266f3c0b0>]}
+[0m12:17:49.481369 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8052a754-e177-422d-a173-297aacee98f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc266d61310>]}
+[0m12:17:49.483452 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m12:17:49.594102 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m12:17:49.709832 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:17:49.710284 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:17:49.757691 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8052a754-e177-422d-a173-297aacee98f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc2613d4d40>]}
+[0m12:17:49.853045 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m12:17:49.854831 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m12:17:49.885521 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8052a754-e177-422d-a173-297aacee98f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc26073f080>]}
+[0m12:17:49.886142 [info ] [MainThread]: Found 2 models, 16 data tests, 469 macros
+[0m12:17:49.886596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8052a754-e177-422d-a173-297aacee98f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc261134bf0>]}
+[0m12:17:49.889174 [info ] [MainThread]: 
+[0m12:17:49.889648 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:17:49.890050 [info ] [MainThread]: 
+[0m12:17:49.890621 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:17:49.896073 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_medallion_main'
+[0m12:17:49.936570 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m12:17:49.937064 [debug] [ThreadPool]: On list_medallion_main: BEGIN
+[0m12:17:49.937468 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:17:49.954436 [debug] [ThreadPool]: SQL status: OK in 0.017 seconds
+[0m12:17:49.954969 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m12:17:49.955399 [debug] [ThreadPool]: On list_medallion_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion_main"} */
+select
+      'medallion' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'medallion'
+  
+[0m12:17:49.970078 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m12:17:49.971695 [debug] [ThreadPool]: On list_medallion_main: ROLLBACK
+[0m12:17:49.973035 [debug] [ThreadPool]: Failed to rollback 'list_medallion_main'
+[0m12:17:49.973447 [debug] [ThreadPool]: On list_medallion_main: Close
+[0m12:17:49.974565 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8052a754-e177-422d-a173-297aacee98f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc2613414f0>]}
+[0m12:17:49.975249 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:49.975620 [debug] [MainThread]: On master: BEGIN
+[0m12:17:49.975989 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:17:49.976817 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:17:49.977289 [debug] [MainThread]: On master: COMMIT
+[0m12:17:49.977977 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:49.978513 [debug] [MainThread]: On master: COMMIT
+[0m12:17:49.979236 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:17:49.979809 [debug] [MainThread]: On master: Close
+[0m12:17:49.983297 [debug] [Thread-1 (]: Began running node test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26
+[0m12:17:49.983804 [debug] [Thread-2 (]: Began running node test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89
+[0m12:17:49.984408 [debug] [Thread-3 (]: Began running node test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428
+[0m12:17:49.985144 [debug] [Thread-4 (]: Began running node test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4
+[0m12:17:49.985779 [info ] [Thread-1 (]: 1 of 16 START test accepted_values_stg_transactions_status__completed__pending__failed  [RUN]
+[0m12:17:49.986564 [info ] [Thread-2 (]: 2 of 16 START test non_negative_fct_customer_transactions_total_amount_all ..... [RUN]
+[0m12:17:49.987261 [info ] [Thread-3 (]: 3 of 16 START test non_negative_fct_customer_transactions_total_amount_completed  [RUN]
+[0m12:17:49.988019 [info ] [Thread-4 (]: 4 of 16 START test non_negative_fct_customer_transactions_transaction_count .... [RUN]
+[0m12:17:49.988687 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_medallion_main, now test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26)
+[0m12:17:49.989511 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89'
+[0m12:17:49.990207 [debug] [Thread-3 (]: Acquiring new duckdb connection 'test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428'
+[0m12:17:49.991040 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4'
+[0m12:17:49.991620 [debug] [Thread-1 (]: Began compiling node test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26
+[0m12:17:49.992345 [debug] [Thread-2 (]: Began compiling node test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89
+[0m12:17:49.992901 [debug] [Thread-3 (]: Began compiling node test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428
+[0m12:17:49.993507 [debug] [Thread-4 (]: Began compiling node test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4
+[0m12:17:50.022880 [debug] [Thread-2 (]: Writing injected SQL for node "test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89"
+[0m12:17:50.025247 [debug] [Thread-1 (]: Writing injected SQL for node "test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26"
+[0m12:17:50.030215 [debug] [Thread-3 (]: Writing injected SQL for node "test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428"
+[0m12:17:50.035097 [debug] [Thread-4 (]: Writing injected SQL for node "test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4"
+[0m12:17:50.036398 [debug] [Thread-2 (]: Began executing node test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89
+[0m12:17:50.037338 [debug] [Thread-3 (]: Began executing node test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428
+[0m12:17:50.038100 [debug] [Thread-1 (]: Began executing node test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26
+[0m12:17:50.060989 [debug] [Thread-2 (]: Writing runtime sql for node "test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89"
+[0m12:17:50.061984 [debug] [Thread-4 (]: Began executing node test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4
+[0m12:17:50.065708 [debug] [Thread-3 (]: Writing runtime sql for node "test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428"
+[0m12:17:50.068694 [debug] [Thread-1 (]: Writing runtime sql for node "test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26"
+[0m12:17:50.070924 [debug] [Thread-4 (]: Writing runtime sql for node "test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4"
+[0m12:17:50.072218 [debug] [Thread-1 (]: Using duckdb connection "test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26"
+[0m12:17:50.073078 [debug] [Thread-2 (]: Using duckdb connection "test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89"
+[0m12:17:50.073898 [debug] [Thread-3 (]: Using duckdb connection "test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428"
+[0m12:17:50.074680 [debug] [Thread-1 (]: On test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26: BEGIN
+[0m12:17:50.075295 [debug] [Thread-4 (]: Using duckdb connection "test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4"
+[0m12:17:50.075778 [debug] [Thread-2 (]: On test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89: BEGIN
+[0m12:17:50.076243 [debug] [Thread-3 (]: On test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428: BEGIN
+[0m12:17:50.076819 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:17:50.077753 [debug] [Thread-4 (]: On test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4: BEGIN
+[0m12:17:50.078665 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:17:50.079606 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:17:50.081046 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:17:50.082370 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m12:17:50.083680 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m12:17:50.084768 [debug] [Thread-1 (]: Using duckdb connection "test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26"
+[0m12:17:50.085371 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m12:17:50.086196 [debug] [Thread-2 (]: Using duckdb connection "test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89"
+[0m12:17:50.086975 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m12:17:50.087439 [debug] [Thread-1 (]: On test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        status as value_field,
+        count(*) as n_records
+
+    from "medallion"."main"."stg_transactions"
+    group by status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'completed','pending','failed'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.087971 [debug] [Thread-3 (]: Using duckdb connection "test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428"
+[0m12:17:50.088445 [debug] [Thread-2 (]: On test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+-- TODO: Implementar el test para verificar que los valores en la columna son no negativos y no nulos.
+
+select
+    total_amount_all
+from "medallion"."main"."fct_customer_transactions"
+where total_amount_all < 0 or total_amount_all is null
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.088991 [debug] [Thread-4 (]: Using duckdb connection "test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4"
+[0m12:17:50.090953 [debug] [Thread-4 (]: On test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+-- TODO: Implementar el test para verificar que los valores en la columna son no negativos y no nulos.
+
+select
+    transaction_count
+from "medallion"."main"."fct_customer_transactions"
+where transaction_count < 0 or transaction_count is null
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.089672 [debug] [Thread-3 (]: On test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+-- TODO: Implementar el test para verificar que los valores en la columna son no negativos y no nulos.
+
+select
+    total_amount_completed
+from "medallion"."main"."fct_customer_transactions"
+where total_amount_completed < 0 or total_amount_completed is null
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.095160 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:17:50.096013 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:17:50.096977 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m12:17:50.097666 [debug] [Thread-2 (]: SQL status: OK in 0.007 seconds
+[0m12:17:50.103039 [debug] [Thread-4 (]: On test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4: ROLLBACK
+[0m12:17:50.104858 [debug] [Thread-3 (]: On test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428: ROLLBACK
+[0m12:17:50.106634 [debug] [Thread-2 (]: On test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89: ROLLBACK
+[0m12:17:50.107695 [debug] [Thread-4 (]: Failed to rollback 'test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4'
+[0m12:17:50.108729 [debug] [Thread-3 (]: Failed to rollback 'test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428'
+[0m12:17:50.110571 [debug] [Thread-2 (]: Failed to rollback 'test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89'
+[0m12:17:50.113458 [debug] [Thread-1 (]: On test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26: ROLLBACK
+[0m12:17:50.114425 [debug] [Thread-4 (]: On test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4: Close
+[0m12:17:50.115319 [debug] [Thread-3 (]: On test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428: Close
+[0m12:17:50.115948 [debug] [Thread-2 (]: On test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89: Close
+[0m12:17:50.117145 [debug] [Thread-1 (]: Failed to rollback 'test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26'
+[0m12:17:50.118021 [info ] [Thread-4 (]: 4 of 16 PASS non_negative_fct_customer_transactions_transaction_count .......... [[32mPASS[0m in 0.13s]
+[0m12:17:50.118689 [info ] [Thread-3 (]: 3 of 16 PASS non_negative_fct_customer_transactions_total_amount_completed ..... [[32mPASS[0m in 0.13s]
+[0m12:17:50.119408 [info ] [Thread-2 (]: 2 of 16 PASS non_negative_fct_customer_transactions_total_amount_all ........... [[32mPASS[0m in 0.13s]
+[0m12:17:50.119989 [debug] [Thread-1 (]: On test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26: Close
+[0m12:17:50.120682 [debug] [Thread-4 (]: Finished running node test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4
+[0m12:17:50.121375 [debug] [Thread-3 (]: Finished running node test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428
+[0m12:17:50.122030 [debug] [Thread-2 (]: Finished running node test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89
+[0m12:17:50.122665 [debug] [Thread-4 (]: Began running node test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733
+[0m12:17:50.123382 [debug] [Thread-3 (]: Began running node test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c
+[0m12:17:50.124200 [info ] [Thread-1 (]: 1 of 16 PASS accepted_values_stg_transactions_status__completed__pending__failed  [[32mPASS[0m in 0.14s]
+[0m12:17:50.124889 [debug] [Thread-2 (]: Began running node test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f
+[0m12:17:50.125375 [info ] [Thread-4 (]: 5 of 16 START test non_negative_stg_transactions_amount ........................ [RUN]
+[0m12:17:50.125958 [info ] [Thread-3 (]: 6 of 16 START test not_null_fct_customer_transactions_customer_id .............. [RUN]
+[0m12:17:50.126604 [debug] [Thread-1 (]: Finished running node test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26
+[0m12:17:50.127191 [info ] [Thread-2 (]: 7 of 16 START test not_null_fct_customer_transactions_total_amount_all ......... [RUN]
+[0m12:17:50.128488 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.medallion_dbt.non_negative_fct_customer_transactions_transaction_count.df8b0df1a4, now test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733)
+[0m12:17:50.129147 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_completed.b85991a428, now test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c)
+[0m12:17:50.129900 [debug] [Thread-1 (]: Began running node test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418
+[0m12:17:50.130797 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.medallion_dbt.non_negative_fct_customer_transactions_total_amount_all.1032e62a89, now test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f)
+[0m12:17:50.131724 [debug] [Thread-4 (]: Began compiling node test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733
+[0m12:17:50.132500 [debug] [Thread-3 (]: Began compiling node test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c
+[0m12:17:50.133924 [debug] [Thread-2 (]: Began compiling node test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f
+[0m12:17:50.133385 [info ] [Thread-1 (]: 8 of 16 START test not_null_fct_customer_transactions_total_amount_completed ... [RUN]
+[0m12:17:50.138705 [debug] [Thread-4 (]: Writing injected SQL for node "test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733"
+[0m12:17:50.146711 [debug] [Thread-3 (]: Writing injected SQL for node "test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c"
+[0m12:17:50.153504 [debug] [Thread-2 (]: Writing injected SQL for node "test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f"
+[0m12:17:50.154159 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.medallion_dbt.accepted_values_stg_transactions_status__completed__pending__failed.e52c83ab26, now test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418)
+[0m12:17:50.155176 [debug] [Thread-4 (]: Began executing node test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733
+[0m12:17:50.155982 [debug] [Thread-3 (]: Began executing node test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c
+[0m12:17:50.156651 [debug] [Thread-1 (]: Began compiling node test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418
+[0m12:17:50.158771 [debug] [Thread-4 (]: Writing runtime sql for node "test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733"
+[0m12:17:50.159286 [debug] [Thread-2 (]: Began executing node test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f
+[0m12:17:50.161671 [debug] [Thread-3 (]: Writing runtime sql for node "test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c"
+[0m12:17:50.166981 [debug] [Thread-1 (]: Writing injected SQL for node "test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418"
+[0m12:17:50.169451 [debug] [Thread-2 (]: Writing runtime sql for node "test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f"
+[0m12:17:50.170240 [debug] [Thread-4 (]: Using duckdb connection "test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733"
+[0m12:17:50.170893 [debug] [Thread-3 (]: Using duckdb connection "test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c"
+[0m12:17:50.171901 [debug] [Thread-4 (]: On test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733: BEGIN
+[0m12:17:50.172583 [debug] [Thread-2 (]: Using duckdb connection "test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f"
+[0m12:17:50.173358 [debug] [Thread-3 (]: On test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c: BEGIN
+[0m12:17:50.174042 [debug] [Thread-1 (]: Began executing node test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418
+[0m12:17:50.174554 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:17:50.175235 [debug] [Thread-2 (]: On test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f: BEGIN
+[0m12:17:50.175790 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:17:50.178406 [debug] [Thread-1 (]: Writing runtime sql for node "test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418"
+[0m12:17:50.179375 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:17:50.180738 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m12:17:50.182218 [debug] [Thread-1 (]: Using duckdb connection "test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418"
+[0m12:17:50.183113 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m12:17:50.183971 [debug] [Thread-4 (]: Using duckdb connection "test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733"
+[0m12:17:50.184490 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m12:17:50.184980 [debug] [Thread-1 (]: On test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418: BEGIN
+[0m12:17:50.185421 [debug] [Thread-3 (]: Using duckdb connection "test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c"
+[0m12:17:50.186008 [debug] [Thread-4 (]: On test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+-- TODO: Implementar el test para verificar que los valores en la columna son no negativos y no nulos.
+
+select
+    amount
+from "medallion"."main"."stg_transactions"
+where amount < 0 or amount is null
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.186520 [debug] [Thread-2 (]: Using duckdb connection "test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f"
+[0m12:17:50.186986 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:17:50.187434 [debug] [Thread-3 (]: On test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from "medallion"."main"."fct_customer_transactions"
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.188240 [debug] [Thread-2 (]: On test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_amount_all
+from "medallion"."main"."fct_customer_transactions"
+where total_amount_all is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.189299 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:17:50.190139 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:17:50.190632 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:17:50.191304 [debug] [Thread-1 (]: Using duckdb connection "test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418"
+[0m12:17:50.193734 [debug] [Thread-4 (]: On test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733: ROLLBACK
+[0m12:17:50.194710 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:17:50.197354 [debug] [Thread-3 (]: On test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c: ROLLBACK
+[0m12:17:50.198429 [debug] [Thread-1 (]: On test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_amount_completed
+from "medallion"."main"."fct_customer_transactions"
+where total_amount_completed is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.200848 [debug] [Thread-4 (]: Failed to rollback 'test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733'
+[0m12:17:50.202221 [debug] [Thread-3 (]: Failed to rollback 'test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c'
+[0m12:17:50.203857 [debug] [Thread-2 (]: On test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f: ROLLBACK
+[0m12:17:50.204691 [debug] [Thread-4 (]: On test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733: Close
+[0m12:17:50.205320 [debug] [Thread-3 (]: On test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c: Close
+[0m12:17:50.205967 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:17:50.207779 [debug] [Thread-2 (]: Failed to rollback 'test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f'
+[0m12:17:50.208723 [info ] [Thread-4 (]: 5 of 16 PASS non_negative_stg_transactions_amount .............................. [[32mPASS[0m in 0.08s]
+[0m12:17:50.209379 [info ] [Thread-3 (]: 6 of 16 PASS not_null_fct_customer_transactions_customer_id .................... [[32mPASS[0m in 0.08s]
+[0m12:17:50.210081 [debug] [Thread-2 (]: On test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f: Close
+[0m12:17:50.212744 [debug] [Thread-1 (]: On test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418: ROLLBACK
+[0m12:17:50.214288 [debug] [Thread-4 (]: Finished running node test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733
+[0m12:17:50.215574 [debug] [Thread-3 (]: Finished running node test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c
+[0m12:17:50.216568 [info ] [Thread-2 (]: 7 of 16 PASS not_null_fct_customer_transactions_total_amount_all ............... [[32mPASS[0m in 0.09s]
+[0m12:17:50.218235 [debug] [Thread-1 (]: Failed to rollback 'test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418'
+[0m12:17:50.218715 [debug] [Thread-4 (]: Began running node test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e
+[0m12:17:50.219264 [debug] [Thread-3 (]: Began running node test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e
+[0m12:17:50.220096 [debug] [Thread-2 (]: Finished running node test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f
+[0m12:17:50.220555 [debug] [Thread-1 (]: On test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418: Close
+[0m12:17:50.221045 [info ] [Thread-4 (]: 9 of 16 START test not_null_fct_customer_transactions_transaction_count ........ [RUN]
+[0m12:17:50.221601 [info ] [Thread-3 (]: 10 of 16 START test not_null_stg_transactions_amount ........................... [RUN]
+[0m12:17:50.222318 [debug] [Thread-2 (]: Began running node test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf
+[0m12:17:50.223185 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.medallion_dbt.non_negative_stg_transactions_amount.cc30daf733, now test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e)
+[0m12:17:50.223804 [info ] [Thread-1 (]: 8 of 16 PASS not_null_fct_customer_transactions_total_amount_completed ......... [[32mPASS[0m in 0.07s]
+[0m12:17:50.224446 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.medallion_dbt.not_null_fct_customer_transactions_customer_id.8253bbdb2c, now test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e)
+[0m12:17:50.225168 [info ] [Thread-2 (]: 11 of 16 START test not_null_stg_transactions_customer_id ...................... [RUN]
+[0m12:17:50.225731 [debug] [Thread-4 (]: Began compiling node test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e
+[0m12:17:50.226385 [debug] [Thread-1 (]: Finished running node test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418
+[0m12:17:50.226819 [debug] [Thread-3 (]: Began compiling node test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e
+[0m12:17:50.227433 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.medallion_dbt.not_null_fct_customer_transactions_total_amount_all.0a661a703f, now test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf)
+[0m12:17:50.233941 [debug] [Thread-4 (]: Writing injected SQL for node "test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e"
+[0m12:17:50.234770 [debug] [Thread-1 (]: Began running node test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875
+[0m12:17:50.238565 [debug] [Thread-3 (]: Writing injected SQL for node "test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e"
+[0m12:17:50.239217 [debug] [Thread-2 (]: Began compiling node test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf
+[0m12:17:50.239954 [info ] [Thread-1 (]: 12 of 16 START test not_null_stg_transactions_status ........................... [RUN]
+[0m12:17:50.246192 [debug] [Thread-2 (]: Writing injected SQL for node "test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf"
+[0m12:17:50.247137 [debug] [Thread-4 (]: Began executing node test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e
+[0m12:17:50.248182 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.medallion_dbt.not_null_fct_customer_transactions_total_amount_completed.989f790418, now test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875)
+[0m12:17:50.249206 [debug] [Thread-3 (]: Began executing node test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e
+[0m12:17:50.252202 [debug] [Thread-4 (]: Writing runtime sql for node "test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e"
+[0m12:17:50.252761 [debug] [Thread-1 (]: Began compiling node test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875
+[0m12:17:50.253233 [debug] [Thread-2 (]: Began executing node test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf
+[0m12:17:50.255274 [debug] [Thread-3 (]: Writing runtime sql for node "test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e"
+[0m12:17:50.256024 [debug] [Thread-4 (]: Using duckdb connection "test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e"
+[0m12:17:50.262329 [debug] [Thread-1 (]: Writing injected SQL for node "test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875"
+[0m12:17:50.318071 [debug] [Thread-2 (]: Writing runtime sql for node "test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf"
+[0m12:17:50.318686 [debug] [Thread-4 (]: On test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e: BEGIN
+[0m12:17:50.319327 [debug] [Thread-3 (]: Using duckdb connection "test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e"
+[0m12:17:50.320045 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:17:50.320942 [debug] [Thread-2 (]: Using duckdb connection "test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf"
+[0m12:17:50.321677 [debug] [Thread-3 (]: On test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e: BEGIN
+[0m12:17:50.322720 [debug] [Thread-1 (]: Began executing node test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875
+[0m12:17:50.323417 [debug] [Thread-2 (]: On test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf: BEGIN
+[0m12:17:50.324123 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:17:50.324580 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m12:17:50.327616 [debug] [Thread-1 (]: Writing runtime sql for node "test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875"
+[0m12:17:50.328565 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:17:50.329540 [debug] [Thread-4 (]: Using duckdb connection "test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e"
+[0m12:17:50.330662 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m12:17:50.332155 [debug] [Thread-1 (]: Using duckdb connection "test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875"
+[0m12:17:50.333019 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m12:17:50.333729 [debug] [Thread-4 (]: On test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select transaction_count
+from "medallion"."main"."fct_customer_transactions"
+where transaction_count is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.334730 [debug] [Thread-3 (]: Using duckdb connection "test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e"
+[0m12:17:50.335454 [debug] [Thread-1 (]: On test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875: BEGIN
+[0m12:17:50.335998 [debug] [Thread-2 (]: Using duckdb connection "test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf"
+[0m12:17:50.336987 [debug] [Thread-3 (]: On test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select amount
+from "medallion"."main"."stg_transactions"
+where amount is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.337634 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:17:50.338106 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:17:50.338740 [debug] [Thread-2 (]: On test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from "medallion"."main"."stg_transactions"
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.341007 [debug] [Thread-4 (]: On test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e: ROLLBACK
+[0m12:17:50.341628 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:17:50.343577 [debug] [Thread-4 (]: Failed to rollback 'test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e'
+[0m12:17:50.344402 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m12:17:50.345645 [debug] [Thread-4 (]: On test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e: Close
+[0m12:17:50.346505 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m12:17:50.348581 [debug] [Thread-3 (]: On test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e: ROLLBACK
+[0m12:17:50.349224 [debug] [Thread-1 (]: Using duckdb connection "test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875"
+[0m12:17:50.350257 [info ] [Thread-4 (]: 9 of 16 PASS not_null_fct_customer_transactions_transaction_count .............. [[32mPASS[0m in 0.13s]
+[0m12:17:50.351570 [debug] [Thread-3 (]: Failed to rollback 'test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e'
+[0m12:17:50.353511 [debug] [Thread-2 (]: On test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf: ROLLBACK
+[0m12:17:50.354025 [debug] [Thread-1 (]: On test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select status
+from "medallion"."main"."stg_transactions"
+where status is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.354731 [debug] [Thread-4 (]: Finished running node test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e
+[0m12:17:50.355258 [debug] [Thread-3 (]: On test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e: Close
+[0m12:17:50.356435 [debug] [Thread-2 (]: Failed to rollback 'test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf'
+[0m12:17:50.357232 [debug] [Thread-4 (]: Began running node test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c
+[0m12:17:50.358206 [info ] [Thread-3 (]: 10 of 16 PASS not_null_stg_transactions_amount ................................. [[32mPASS[0m in 0.13s]
+[0m12:17:50.359140 [debug] [Thread-2 (]: On test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf: Close
+[0m12:17:50.359942 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:17:50.360864 [info ] [Thread-4 (]: 13 of 16 START test not_null_stg_transactions_transaction_date ................. [RUN]
+[0m12:17:50.362194 [debug] [Thread-3 (]: Finished running node test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e
+[0m12:17:50.363429 [info ] [Thread-2 (]: 11 of 16 PASS not_null_stg_transactions_customer_id ............................ [[32mPASS[0m in 0.14s]
+[0m12:17:50.366383 [debug] [Thread-1 (]: On test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875: ROLLBACK
+[0m12:17:50.366990 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.medallion_dbt.not_null_fct_customer_transactions_transaction_count.7466a4c02e, now test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c)
+[0m12:17:50.367940 [debug] [Thread-3 (]: Began running node test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m12:17:50.368954 [debug] [Thread-2 (]: Finished running node test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf
+[0m12:17:50.370544 [debug] [Thread-1 (]: Failed to rollback 'test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875'
+[0m12:17:50.371300 [debug] [Thread-4 (]: Began compiling node test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c
+[0m12:17:50.371887 [info ] [Thread-3 (]: 14 of 16 START test not_null_stg_transactions_transaction_id ................... [RUN]
+[0m12:17:50.372701 [debug] [Thread-2 (]: Began running node test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7
+[0m12:17:50.373286 [debug] [Thread-1 (]: On test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875: Close
+[0m12:17:50.380381 [debug] [Thread-4 (]: Writing injected SQL for node "test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c"
+[0m12:17:50.381170 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.medallion_dbt.not_null_stg_transactions_amount.3629b5421e, now test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4)
+[0m12:17:50.382167 [info ] [Thread-2 (]: 15 of 16 START test not_null_stg_transactions_transaction_ts ................... [RUN]
+[0m12:17:50.383446 [info ] [Thread-1 (]: 12 of 16 PASS not_null_stg_transactions_status ................................. [[32mPASS[0m in 0.14s]
+[0m12:17:50.384409 [debug] [Thread-3 (]: Began compiling node test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m12:17:50.385232 [debug] [Thread-4 (]: Began executing node test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c
+[0m12:17:50.386156 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.medallion_dbt.not_null_stg_transactions_customer_id.ea7b0d99bf, now test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7)
+[0m12:17:50.387131 [debug] [Thread-1 (]: Finished running node test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875
+[0m12:17:50.391829 [debug] [Thread-3 (]: Writing injected SQL for node "test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4"
+[0m12:17:50.394620 [debug] [Thread-4 (]: Writing runtime sql for node "test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c"
+[0m12:17:50.395457 [debug] [Thread-2 (]: Began compiling node test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7
+[0m12:17:50.396389 [debug] [Thread-1 (]: Began running node test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396
+[0m12:17:50.397949 [debug] [Thread-3 (]: Began executing node test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m12:17:50.398779 [debug] [Thread-4 (]: Using duckdb connection "test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c"
+[0m12:17:50.403111 [debug] [Thread-2 (]: Writing injected SQL for node "test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7"
+[0m12:17:50.403703 [info ] [Thread-1 (]: 16 of 16 START test unique_stg_transactions_transaction_id ..................... [RUN]
+[0m12:17:50.406073 [debug] [Thread-3 (]: Writing runtime sql for node "test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4"
+[0m12:17:50.406639 [debug] [Thread-4 (]: On test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c: BEGIN
+[0m12:17:50.407331 [debug] [Thread-2 (]: Began executing node test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7
+[0m12:17:50.407860 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.medallion_dbt.not_null_stg_transactions_status.c7c2fec875, now test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396)
+[0m12:17:50.408550 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:17:50.412346 [debug] [Thread-2 (]: Writing runtime sql for node "test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7"
+[0m12:17:50.413117 [debug] [Thread-3 (]: Using duckdb connection "test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4"
+[0m12:17:50.414154 [debug] [Thread-1 (]: Began compiling node test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396
+[0m12:17:50.415770 [debug] [Thread-3 (]: On test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4: BEGIN
+[0m12:17:50.416696 [debug] [Thread-2 (]: Using duckdb connection "test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7"
+[0m12:17:50.417492 [debug] [Thread-4 (]: SQL status: OK in 0.009 seconds
+[0m12:17:50.423667 [debug] [Thread-1 (]: Writing injected SQL for node "test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396"
+[0m12:17:50.424239 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:17:50.424727 [debug] [Thread-2 (]: On test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7: BEGIN
+[0m12:17:50.425244 [debug] [Thread-4 (]: Using duckdb connection "test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c"
+[0m12:17:50.426199 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:17:50.426700 [debug] [Thread-1 (]: Began executing node test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396
+[0m12:17:50.427380 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:17:50.428436 [debug] [Thread-4 (]: On test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select transaction_date
+from "medallion"."main"."stg_transactions"
+where transaction_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.432392 [debug] [Thread-1 (]: Writing runtime sql for node "test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396"
+[0m12:17:50.433116 [debug] [Thread-3 (]: Using duckdb connection "test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4"
+[0m12:17:50.433933 [debug] [Thread-2 (]: SQL status: OK in 0.008 seconds
+[0m12:17:50.434975 [debug] [Thread-3 (]: On test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select transaction_id
+from "medallion"."main"."stg_transactions"
+where transaction_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.435590 [debug] [Thread-1 (]: Using duckdb connection "test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396"
+[0m12:17:50.436116 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:17:50.436635 [debug] [Thread-2 (]: Using duckdb connection "test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7"
+[0m12:17:50.437399 [debug] [Thread-1 (]: On test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396: BEGIN
+[0m12:17:50.438324 [debug] [Thread-2 (]: On test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select transaction_ts
+from "medallion"."main"."stg_transactions"
+where transaction_ts is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.440399 [debug] [Thread-4 (]: On test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c: ROLLBACK
+[0m12:17:50.440982 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:17:50.441440 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m12:17:50.442882 [debug] [Thread-4 (]: Failed to rollback 'test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c'
+[0m12:17:50.443885 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:17:50.444884 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m12:17:50.447551 [debug] [Thread-3 (]: On test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4: ROLLBACK
+[0m12:17:50.448225 [debug] [Thread-4 (]: On test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c: Close
+[0m12:17:50.448973 [debug] [Thread-1 (]: Using duckdb connection "test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396"
+[0m12:17:50.450498 [debug] [Thread-2 (]: On test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7: ROLLBACK
+[0m12:17:50.451714 [debug] [Thread-3 (]: Failed to rollback 'test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4'
+[0m12:17:50.452466 [info ] [Thread-4 (]: 13 of 16 PASS not_null_stg_transactions_transaction_date ....................... [[32mPASS[0m in 0.09s]
+[0m12:17:50.453282 [debug] [Thread-1 (]: On test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "node_id": "test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    transaction_id as unique_field,
+    count(*) as n_records
+
+from "medallion"."main"."stg_transactions"
+where transaction_id is not null
+group by transaction_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:17:50.454495 [debug] [Thread-2 (]: Failed to rollback 'test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7'
+[0m12:17:50.455017 [debug] [Thread-3 (]: On test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4: Close
+[0m12:17:50.455865 [debug] [Thread-4 (]: Finished running node test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c
+[0m12:17:50.456604 [debug] [Thread-2 (]: On test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7: Close
+[0m12:17:50.457542 [info ] [Thread-3 (]: 14 of 16 PASS not_null_stg_transactions_transaction_id ......................... [[32mPASS[0m in 0.08s]
+[0m12:17:50.458468 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:17:50.459375 [debug] [Thread-3 (]: Finished running node test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m12:17:50.460017 [info ] [Thread-2 (]: 15 of 16 PASS not_null_stg_transactions_transaction_ts ......................... [[32mPASS[0m in 0.07s]
+[0m12:17:50.462664 [debug] [Thread-1 (]: On test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396: ROLLBACK
+[0m12:17:50.464291 [debug] [Thread-2 (]: Finished running node test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7
+[0m12:17:50.466557 [debug] [Thread-1 (]: Failed to rollback 'test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396'
+[0m12:17:50.467668 [debug] [Thread-1 (]: On test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396: Close
+[0m12:17:50.468445 [info ] [Thread-1 (]: 16 of 16 PASS unique_stg_transactions_transaction_id ........................... [[32mPASS[0m in 0.06s]
+[0m12:17:50.469179 [debug] [Thread-1 (]: Finished running node test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396
+[0m12:17:50.470620 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:50.471053 [debug] [MainThread]: On master: BEGIN
+[0m12:17:50.471420 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:17:50.472179 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:17:50.472577 [debug] [MainThread]: On master: COMMIT
+[0m12:17:50.472969 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:50.473332 [debug] [MainThread]: On master: COMMIT
+[0m12:17:50.473971 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:17:50.474364 [debug] [MainThread]: On master: Close
+[0m12:17:50.474831 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:17:50.475203 [debug] [MainThread]: Connection 'test.medallion_dbt.unique_stg_transactions_transaction_id.ee9a78a396' was properly closed.
+[0m12:17:50.475539 [debug] [MainThread]: Connection 'test.medallion_dbt.not_null_stg_transactions_transaction_ts.414f2f36a7' was properly closed.
+[0m12:17:50.475873 [debug] [MainThread]: Connection 'test.medallion_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4' was properly closed.
+[0m12:17:50.476260 [debug] [MainThread]: Connection 'test.medallion_dbt.not_null_stg_transactions_transaction_date.353bde368c' was properly closed.
+[0m12:17:50.476653 [info ] [MainThread]: 
+[0m12:17:50.477069 [info ] [MainThread]: Finished running 16 data tests in 0 hours 0 minutes and 0.59 seconds (0.59s).
+[0m12:17:50.482433 [debug] [MainThread]: Command end result
+[0m12:17:50.515543 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m12:17:50.517513 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m12:17:50.525439 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/run_results.json
+[0m12:17:50.525965 [info ] [MainThread]: 
+[0m12:17:50.526483 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:17:50.527007 [info ] [MainThread]: 
+[0m12:17:50.528000 [info ] [MainThread]: Done. PASS=16 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=16
+[0m12:17:50.529332 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 1.5575638, "process_in_blocks": "18360", "process_kernel_time": 0.25717, "process_mem_max_rss": "155688", "process_out_blocks": "2536", "process_user_time": 3.062034}
+[0m12:17:50.530441 [debug] [MainThread]: Command `dbt test` succeeded at 12:17:50.530228 after 1.56 seconds
+[0m12:17:50.531334 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc269b79970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc267bb3f80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc266f6eb70>]}
+[0m12:17:50.532174 [debug] [MainThread]: Flushing usage events
+[0m12:17:51.409942 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:26:36.903246 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8ec9d27740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8ecacf5c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8ec823f860>]}
+
+
+============================== 12:26:36.906573 | f267b81b-1d60-4147-88dd-0bfdbd5cc16d ==============================
+[0m12:26:36.906573 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:26:36.907624 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'introspect': 'True', 'warn_error': 'None', 'version_check': 'True', 'empty': 'False', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'printer_width': '80', 'log_format': 'default', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'profiles_dir': '/home/sebastian/.dbt', 'debug': 'False', 'indirect_selection': 'eager', 'use_colors': 'True', 'write_json': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'no_print': 'None', 'log_cache_events': 'False'}
+[0m12:26:36.911041 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'medallion_duckdb'
+[0m12:26:36.912121 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.08132781, "process_in_blocks": "552", "process_kernel_time": 0.166717, "process_mem_max_rss": "100776", "process_out_blocks": "8", "process_user_time": 1.603287}
+[0m12:26:36.912734 [debug] [MainThread]: Command `dbt run` failed at 12:26:36.912565 after 0.08 seconds
+[0m12:26:36.913552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8ec8849730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8ec829aed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8ec8299250>]}
+[0m12:26:36.914498 [debug] [MainThread]: Flushing usage events
+[0m12:26:38.116724 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:28:01.304979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c788ead6f60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c788df553d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c7890449c40>]}
+
+
+============================== 12:28:01.308276 | f0d55415-d3c8-4977-bf5a-0943fe696b92 ==============================
+[0m12:28:01.308276 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:28:01.308988 [debug] [MainThread]: running dbt with arguments {'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'printer_width': '80', 'version_check': 'True', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'use_colors': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'False', 'use_experimental_parser': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'no_print': 'None', 'write_json': 'True', 'log_cache_events': 'False', 'log_format': 'default', 'target_path': 'None', 'quiet': 'False', 'profiles_dir': '/home/sebastian/.dbt'}
+[0m12:28:01.311792 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'medallion_duckdb'
+[0m12:28:01.312791 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.06774062, "process_in_blocks": "0", "process_kernel_time": 0.120586, "process_mem_max_rss": "100868", "process_out_blocks": "8", "process_user_time": 1.515803}
+[0m12:28:01.313407 [debug] [MainThread]: Command `dbt run` failed at 12:28:01.313275 after 0.07 seconds
+[0m12:28:01.314077 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c788d76f8f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c788e7dba40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c788dead760>]}
+[0m12:28:01.314989 [debug] [MainThread]: Flushing usage events
+[0m12:28:02.375349 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:28:04.796321 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a7792ce30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a76e7e780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a77b89f40>]}
+
+
+============================== 12:28:04.801376 | c620185d-6fda-4ebc-9738-c0d5b5635ce6 ==============================
+[0m12:28:04.801376 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:28:04.802567 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'static_parser': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None', 'log_cache_events': 'False', 'fail_fast': 'False', 'write_json': 'True', 'use_experimental_parser': 'False', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'printer_width': '80', 'profiles_dir': '../profiles', 'warn_error': 'None', 'debug': 'False', 'cache_selected_only': 'False', 'invocation_command': 'dbt test', 'no_print': 'None', 'partial_parse': 'True', 'introspect': 'True', 'use_colors': 'True', 'target_path': 'None'}
+[0m12:28:05.155366 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a76cfa870>]}
+[0m12:28:05.229759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a7116c0b0>]}
+[0m12:28:05.231449 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m12:28:05.333757 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m12:28:05.427547 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:28:05.428136 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a775dd8b0>]}
+[0m12:28:06.739414 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values`. Arguments to generic tests
+should be nested under the `arguments` property.`
+[0m12:28:06.740077 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a70eb7140>]}
+[0m12:28:06.865551 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a705d69c0>]}
+[0m12:28:06.946423 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m12:28:06.948937 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m12:28:06.971928 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a70d7fc80>]}
+[0m12:28:06.972521 [info ] [MainThread]: Found 2 models, 16 data tests, 469 macros
+[0m12:28:06.973033 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c620185d-6fda-4ebc-9738-c0d5b5635ce6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a6ba3a810>]}
+[0m12:28:06.975668 [info ] [MainThread]: 
+[0m12:28:06.976259 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:28:06.976722 [info ] [MainThread]: 
+[0m12:28:06.977639 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:28:06.984046 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_medallion_main'
+[0m12:28:07.026328 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m12:28:07.026810 [debug] [ThreadPool]: On list_medallion_main: BEGIN
+[0m12:28:07.027227 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:28:07.034542 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: BEGIN
+[0m12:28:07.035043 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m12:28:07.035969 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:28:07.036586 [debug] [MainThread]: Connection 'list_medallion_main' was properly closed.
+[0m12:28:07.037208 [info ] [MainThread]: 
+[0m12:28:07.037736 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.06 seconds (0.06s).
+[0m12:28:07.038543 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Cannot open file "/home/w1ndman/laboral/examen_ing_de_sw_n_data/warehouse/medallion.duckdb": No such file or directory
+[0m12:28:07.039546 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m12:28:07.040937 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 2.3422985, "process_in_blocks": "264", "process_kernel_time": 0.214755, "process_mem_max_rss": "150980", "process_out_blocks": "2104", "process_user_time": 4.199228}
+[0m12:28:07.041787 [debug] [MainThread]: Command `dbt test` failed at 12:28:07.041655 after 2.34 seconds
+[0m12:28:07.042324 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a775ddee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a76c85c40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x702a705d7fb0>]}
+[0m12:28:07.042996 [debug] [MainThread]: Flushing usage events
+[0m12:28:07.911881 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:30:54.850421 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750414d4650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775040f8fa40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775040d775c0>]}
+
+
+============================== 12:30:54.859040 | 3ac225ef-34b6-4ea2-bb88-a96686d1a836 ==============================
+[0m12:30:54.859040 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:30:54.859726 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'target_path': 'None', 'use_experimental_parser': 'False', 'profiles_dir': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/profiles', 'static_parser': 'True', 'printer_width': '80', 'warn_error': 'None', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'fail_fast': 'False', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'invocation_command': 'dbt run', 'quiet': 'False', 'no_print': 'None', 'empty': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'version_check': 'True', 'debug': 'False'}
+[0m12:30:55.107240 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77503a93f830>]}
+[0m12:30:55.177427 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750409ab230>]}
+[0m12:30:55.179078 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m12:30:55.287032 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m12:30:55.383059 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:30:55.383632 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77503a66aba0>]}
+[0m12:30:56.611937 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values`. Arguments to generic tests
+should be nested under the `arguments` property.`
+[0m12:30:56.612493 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775040541940>]}
+[0m12:30:56.718795 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77503945baa0>]}
+[0m12:30:56.797321 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m12:30:56.799307 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m12:30:56.813113 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77503949f350>]}
+[0m12:30:56.813672 [info ] [MainThread]: Found 2 models, 16 data tests, 469 macros
+[0m12:30:56.814171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3ac225ef-34b6-4ea2-bb88-a96686d1a836', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775039439e50>]}
+[0m12:30:56.817116 [info ] [MainThread]: 
+[0m12:30:56.817927 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:30:56.818426 [info ] [MainThread]: 
+[0m12:30:56.819155 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:30:56.824218 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_medallion'
+[0m12:30:56.865122 [debug] [ThreadPool]: Using duckdb connection "list_medallion"
+[0m12:30:56.865593 [debug] [ThreadPool]: On list_medallion: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"medallion"'
+    
+  
+  
+[0m12:30:56.865968 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:30:56.872400 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "medallion_duckdb", "target_name": "dev", "connection_name": "list_medallion"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"medallion"'
+    
+  
+  
+[0m12:30:56.872871 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m12:30:56.873759 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:30:56.874139 [debug] [MainThread]: Connection 'list_medallion' was properly closed.
+[0m12:30:56.874517 [info ] [MainThread]: 
+[0m12:30:56.875118 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.06 seconds (0.06s).
+[0m12:30:56.876006 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Could not set lock on file "/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/warehouse/medallion.duckdb": Conflicting lock is held in /snap/duckdb/9/duckdb (PID 33229) by user sebastian. See also https://duckdb.org/docs/stable/connect/concurrency
+[0m12:30:56.876987 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m12:30:56.878276 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.0869684, "process_in_blocks": "1296", "process_kernel_time": 0.206634, "process_mem_max_rss": "149960", "process_out_blocks": "2120", "process_user_time": 3.435918}
+[0m12:30:56.879453 [debug] [MainThread]: Command `dbt run` failed at 12:30:56.879251 after 2.09 seconds
+[0m12:30:56.880216 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77504317db20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77503952d8e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750393179e0>]}
+[0m12:30:56.881017 [debug] [MainThread]: Flushing usage events
+[0m12:30:57.694691 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:30:59.690265 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c7846e030>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c7810f260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c78371d00>]}
+
+
+============================== 12:30:59.693480 | 6f1bc72f-8452-4994-8edc-2b338bbfeaed ==============================
+[0m12:30:59.693480 [info ] [MainThread]: Running with dbt=1.10.15
+[0m12:30:59.694247 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'profiles_dir': '../profiles', 'log_path': '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/logs', 'debug': 'False', 'version_check': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'target_path': 'None', 'warn_error': 'None', 'printer_width': '80', 'invocation_command': 'dbt test', 'no_print': 'None', 'introspect': 'True', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'empty': 'None', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'log_format': 'default', 'quiet': 'False'}
+[0m12:30:59.938991 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6f1bc72f-8452-4994-8edc-2b338bbfeaed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c7786e120>]}
+[0m12:31:00.009123 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6f1bc72f-8452-4994-8edc-2b338bbfeaed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c719dfcb0>]}
+[0m12:31:00.010813 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m12:31:00.107734 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m12:31:00.211192 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:31:00.211622 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:31:00.253412 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6f1bc72f-8452-4994-8edc-2b338bbfeaed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c783e5490>]}
+[0m12:31:00.327928 [debug] [MainThread]: Wrote artifact WritableManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/manifest.json
+[0m12:31:00.330352 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/dbt/target/semantic_manifest.json
+[0m12:31:00.356976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6f1bc72f-8452-4994-8edc-2b338bbfeaed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c71357c20>]}
+[0m12:31:00.357534 [info ] [MainThread]: Found 2 models, 16 data tests, 469 macros
+[0m12:31:00.358048 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6f1bc72f-8452-4994-8edc-2b338bbfeaed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c77456060>]}
+[0m12:31:00.360590 [info ] [MainThread]: 
+[0m12:31:00.361088 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:31:00.361483 [info ] [MainThread]: 
+[0m12:31:00.362151 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:31:00.367166 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_medallion_main'
+[0m12:31:00.407847 [debug] [ThreadPool]: Using duckdb connection "list_medallion_main"
+[0m12:31:00.408425 [debug] [ThreadPool]: On list_medallion_main: BEGIN
+[0m12:31:00.408830 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:31:00.415189 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: BEGIN
+[0m12:31:00.415687 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m12:31:00.416681 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:31:00.417054 [debug] [MainThread]: Connection 'list_medallion_main' was properly closed.
+[0m12:31:00.417396 [info ] [MainThread]: 
+[0m12:31:00.417808 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.06 seconds (0.06s).
+[0m12:31:00.418372 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Could not set lock on file "/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/warehouse/medallion.duckdb": Conflicting lock is held in /snap/duckdb/9/duckdb (PID 33229) by user sebastian. See also https://duckdb.org/docs/stable/connect/concurrency
+[0m12:31:00.419291 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.78826386, "process_in_blocks": "0", "process_kernel_time": 0.213313, "process_mem_max_rss": "145976", "process_out_blocks": "1096", "process_user_time": 2.192943}
+[0m12:31:00.419818 [debug] [MainThread]: Command `dbt test` failed at 12:31:00.419701 after 0.79 seconds
+[0m12:31:00.420274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c77d1ac30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c71916810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d7c7197b620>]}
+[0m12:31:00.421143 [debug] [MainThread]: Flushing usage events
+[0m12:31:01.713950 [debug] [MainThread]: An error was encountered while trying to flush usage events

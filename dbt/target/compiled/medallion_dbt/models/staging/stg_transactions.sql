@@ -1,10 +1,10 @@
-{% set clean_dir = var('clean_dir') %}
-{% set ds_nodash = var('ds_nodash') %}
+
+
 
 with source as (
     select *
     from read_parquet(
-        '{{ clean_dir }}/transactions_{{ ds_nodash }}_clean.parquet'
+        '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/data/clean/transactions_20251201_clean.parquet'
     )
 )
 

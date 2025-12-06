@@ -12,7 +12,11 @@ from pathlib import Path
 import pendulum
 from airflow import DAG
 from airflow.exceptions import AirflowException
-from airflow.operators.python import PythonOperator
+# from airflow.operators.python import PythonOperator
+
+#modificamos para atajar warning que nos salta
+from airflow.providers.standard.operators.python import PythonOperator
+
 
 # pylint: disable=import-error,wrong-import-position
 
@@ -70,6 +74,61 @@ def _run_dbt_command(command: str, ds_nodash: str) -> subprocess.CompletedProces
 #  los comandos de dbt.
 
 
+# funcion limpieza de datos en capa bronze
+def bronze_clean(**context): # usamos **context para poder acceder a ds_nodash desde Airflow
+    """Limpia los datos en capa bronze
+    Agarra los datos crudos y los limpia utilizando la funcion clean_daily_transactions
+    """
+    ds_nodash = context["ds_nodash"]
+    execution_date = datetime.strptime(ds_nodash, "%Y%m%d").date()
+    clean_daily_transactions(execution_date, RAW_DIR, CLEAN_DIR)
+
+# funcion para carga de datos en capa silver
+def silver_dbt_run(**context):
+    """Carga los datos en capa silver"""
+    ds_nodash = context["ds_nodash"]
+    result = _run_dbt_command("run", ds_nodash)
+    if result.returncode != 0:
+        # agregamos logs detallados para debug
+        error_log = f"dbt run failed (returncode: {result.returncode})\n"
+        error_log += f"STDOUT:\n{result.stdout}\n"
+        error_log += f"STDERR:\n{result.stderr}\n" 
+        raise AirflowException(error_log)
+        
+    return True
+
+# funcion test en capa gold
+def gold_dbt_test(**context):
+    """Testea los datos en capa gold y escribe el archivo JSON de resultados"""
+    ds_nodash = context["ds_nodash"]
+    result = _run_dbt_command("test", ds_nodash)
+    
+    # Crear el directorio si no existe
+    QUALITY_DIR.mkdir(parents=True, exist_ok=True)
+    
+    # Escribir el archivo JSON con los resultados
+    output_file = QUALITY_DIR / f"dq_results_{ds_nodash}.json"
+    output_data = {
+        "ds_nodash": ds_nodash,
+        "status": "passed" if result.returncode == 0 else "failed",
+        "stdout": result.stdout,
+        "stderr": result.stderr,
+    }
+    
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(output_data, f, indent=2)
+    
+    # Si los tests fallaron, lanzar excepción para que Airflow lo marque como fallido
+    if result.returncode != 0:
+        raise AirflowException(
+            f"dbt test failed: {result.stderr}"
+        )
+    
+    return True
+
+
+
+
 def build_dag() -> DAG:
     """Construct the medallion pipeline DAG with bronze/silver/gold tasks."""
     with DAG(
@@ -80,7 +139,6 @@ def build_dag() -> DAG:
         catchup=True,
         max_active_runs=1,
     ) as medallion_dag:
-
 
         # TODO:
         # * Agregar las tasks necesarias del pipeline para completar lo pedido por el enunciado.
@@ -93,6 +151,30 @@ def build_dag() -> DAG:
         #    de salida tengan nombres únicos por fecha.
         #  * Asegurarse de que los paths usados en las funciones sean relativos a BASE_DIR.
         #  * Usar las funciones definidas arriba para cada etapa del pipeline.
+
+
+
+        # task para limpieza de datos en capa bronze
+        bronze_clean_task = PythonOperator(
+            task_id="bronze_clean",
+            python_callable=bronze_clean,
+            # op_kwargs={"ds_nodash": "{{ ds_nodash }}"}, # si usamos **context no hace falta
+        )
+        # task para carga de datos en capa silver
+        silver_dbt_run_task = PythonOperator(
+            task_id="silver_dbt_run",
+            python_callable=silver_dbt_run,
+            # op_kwargs={"ds_nodash": "{{ ds_nodash }}"}, 
+        )
+        # task para test en capa gold
+        gold_dbt_test_task = PythonOperator(
+            task_id="gold_dbt_test",
+            python_callable=gold_dbt_test,
+            #op_kwargs={"ds_nodash": "{{ ds_nodash }}"},
+        )
+
+        # dependencias del flujo del dag
+        bronze_clean_task >> silver_dbt_run_task >> gold_dbt_test_task
 
 
 

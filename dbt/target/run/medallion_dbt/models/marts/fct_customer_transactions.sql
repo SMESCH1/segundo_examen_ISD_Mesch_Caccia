@@ -1,6 +1,14 @@
 
-with base as (
-    select * from {{ ref('stg_transactions') }}
+  
+    
+    
+
+    create  table
+      "medallion"."main"."fct_customer_transactions__dbt_tmp"
+  
+    as (
+      with base as (
+    select * from "medallion"."main"."stg_transactions"
 )
 
 -- TODO: Completar el modelo para que cree la tabla fct_customer_transactions con las metricas en schema.yml.
@@ -13,3 +21,6 @@ select
     sum(amount) as total_amount_all
 from base
 group by customer_id
+    );
+  
+  
