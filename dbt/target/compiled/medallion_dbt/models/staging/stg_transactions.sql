@@ -4,7 +4,7 @@
 with source as (
     select *
     from read_parquet(
-        '/home/sebastian/Escritorio/MIA/MIA_soft_ing/examen_ing_de_sw_n_data_final/data/clean/transactions_20251201_clean.parquet'
+        '/home/matias/Documentos/UdeSA/MIA/T3/ISD_examenes/segundo_examen_ISD_Mesch_Caccia/data/clean/transactions_20251201_clean.parquet'
     )
 )
 

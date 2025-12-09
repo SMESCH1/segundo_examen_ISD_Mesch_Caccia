@@ -2,24 +2,46 @@ version: 2
 
 models:
   - name: fct_customer_transactions
-    description: "Aggregated customer level metrics derived from cleaned transactions."
+    description: "Aggregated customer-level metrics derived from cleaned transactions."
+
     columns:
       - name: customer_id
         description: "Unique id per customer."
         tests:
           - not_null
+          - unique
+          - customer_exists_in_silver        # Gold test: FK validity with Silver
+
       - name: transaction_count
         description: "Number of transactions per customer."
         tests:
           - not_null
           - non_negative
+          - transaction_count_positive       # Gold test: must be >= 1
+
       - name: total_amount_completed
         description: "Sum of completed transaction amounts."
         tests:
           - not_null
           - non_negative
+          - total_amount_non_negative         # Gold test (duplicate safety)
+
       - name: total_amount_all
         description: "Sum of all transaction amounts."
         tests:
           - not_null
           - non_negative
+          - total_amount_non_negative         # same business rule applies
+
+      - name: first_transaction_ts
+        description: "Earliest transaction timestamp for each customer."
+        tests:
+          - not_null
+
+      - name: last_transaction_ts
+        description: "Latest transaction timestamp for each customer."
+        tests:
+          - not_null
+
+    tests:
+      - unique_customer_rows                  # Ensures 1 row per customer

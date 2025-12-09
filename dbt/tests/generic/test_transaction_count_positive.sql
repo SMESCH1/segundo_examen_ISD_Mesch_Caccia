@@ -1,0 +1,7 @@
+{% test transaction_count_positive(model, column_name) %}
+
+select {{ column_name }}
+from {{ model }}
+where {{ column_name }} <= 0 or {{ column_name }} is null
+
+{% endtest %}

@@ -1,42 +1,299 @@
-# Medallion Architecture Demo (Airflow + dbt + DuckDB)
+# Medallion Architecture Pipeline (Airflow + dbt + DuckDB)
 
-Este proyecto crea un pipeline de 3 pasos que replica la arquitectura medallion:
+Integrantes:
 
-1. **Bronze**: Airflow lee un CSV crudo según la fecha de ejecución y aplica una limpieza básica con Pandas guardando un archivo parquet limpio.
-2. **Silver**: Un `dbt run` carga el parquet en DuckDB y genera modelos intermedios.
-3. **Gold**: `dbt test` valida la tabla final y escribe un archivo con el resultado de los data quality checks.
+* **Matías Caccia**
+* **Sebastián Mesch Henriques**
 
-## Estructura
+Este proyecto implementa un pipeline de datos siguiendo la **arquitectura Medallion (Bronze → Silver → Gold)** utilizando:
+
+* **Airflow** como orquestador
+* **Pandas** para la etapa Bronze
+* **dbt + DuckDB** para modelado Silver y Gold
+* **Tests personalizados** de calidad de datos
+* **Reportes automáticos de Data Quality (DQ)**
+
+El objetivo es demostrar un pipeline moderno, limpio y escalable que aplica prácticas reales de ingeniería de datos:
+
+* Buenas prácticas de ingestión
+* Normalización y validación robusta en Bronze
+* Modelado en dbt en capas Silver/Gold
+* Data Quality sólido con tests genéricos y singulares
+* Observabilidad y trazabilidad completa del pipeline
+
+---
+
+# Estructura del proyecto
 
 ```
 ├── dags/
-│   └── medallion_medallion_dag.py
+│   └── medallion_medallion_dag.py        <- DAG completo Bronze/Silver/Gold
 ├── data/
-│   ├── raw/
-│   │   └── transactions_20251205.csv
-│   ├── clean/
-│   └── quality/
+│   ├── raw/                              <- Archivos CSV crudos
+│   ├── clean/                            <- Parquet Bronze
+│   └── quality/                          <- Resultados Gold (DQ)
 ├── dbt/
 │   ├── dbt_project.yml
 │   ├── models/
-│   │   ├── staging/
-│   │   └── marts/
-│   └── tests/
+│   │   ├── staging/                      <- stg_transactions.sql + schema.yml
+│   │   └── marts/                        <- fct_customer_transactions.sql + schema.yml
+│   └── tests/                            <- Tests genéricos y singulares (Silver/Gold)
 ├── include/
-│   └── transformations.py
+│   └── transformations.py                <- Limpieza Bronze robusta
 ├── profiles/
-│   └── profiles.yml
+│   └── profiles.yml                      <- Perfil DuckDB para dbt
 ├── warehouse/
-│   └── medallion.duckdb (se genera en tiempo de ejecución)
+│   └── medallion.duckdb                  <- Base creada en runtime
 └── requirements.txt
 ```
 
-## Requisitos
+---
 
-- Python 3.10+
-- DuckDB CLI opcional para inspeccionar la base.
+# 🧱 Arquitectura Medallion Implementada
 
-Instala dependencias:
+## 🥉 BRONZE — Limpieza mínima pero confiable con Pandas
+
+Airflow ejecuta:
+
+```python
+clean_daily_transactions(execution_date, RAW_DIR, CLEAN_DIR)
+```
+
+### Mejoras implementadas en Bronze
+
+✔ Validación de columnas requeridas
+✔ Normalización de `amount` → numérico robusto
+✔ Normalización de `status` → lowercase + mapping estricto
+✔ Parsing seguro de timestamps
+✔ Eliminación de fechas futuras
+✔ Eliminación de duplicados
+✔ Validación de que existan filas válidas
+✔ Escritura en Parquet eficiente y estándar
+
+Salida:
+
+```
+data/clean/transactions_<ds>_clean.parquet
+```
+
+## 🥈 SILVER — Modelado con dbt
+
+Airflow ejecuta:
+
+```
+dbt run
+```
+
+Silver produce un modelo limpio, tipado y listo para análisis:
+
+* `stg_transactions.sql`
+* Derivación de `transaction_date`
+* Cast de tipos según `schema.yml`
+* Validaciones complejas a nivel de dominio
+
+### Tests implementados en Silver y su razón de ser
+
+A continuación, se describen todos los tests incluidos, **por qué existen**, y **cuándo fallarían** en un sistema real.
+
+#### 1. `not_null`
+
+Asegura que columnas esenciales no estén vacías.
+
+**Fallaría si:**
+
+* El archivo crudo viene truncado
+* El upstream omite campos
+* Se rompe el mapeo de status o amounts
+
+#### 2. `unique` (transaction_id)
+
+Cada transacción debe ser única.
+
+**Fallaría si:**
+
+* El proveedor envía duplicados
+* Se concatenan archivos accidentalmente
+* El sistema upstream reenvía transacciones
+
+#### 3. `non_negative` (amount)
+
+Un monto nunca debe ser negativo.
+
+**Fallaría si:**
+
+* Se invierte el signo por error
+* Se registran reversas mal representadas
+* Hay fallas del ETL upstream
+
+#### 4. `accepted_status`
+
+Sólo se aceptan:
+
+```
+completed | pending | failed
+```
+
+**Fallaría si:**
+
+* Aparece un nuevo estado no documentado
+* Existen inconsistencias (Completed, completed , UNKNOWN)
+* Hay problemas de input manual
+
+#### 5. `valid_timestamp`
+
+Verifica que `transaction_ts` sea un timestamp válido.
+
+**Fallaría si:**
+
+* Aparecen fechas inválidas (“2025/13/99”)
+* Hay strings corruptas
+* El upstream envía formatos distintos
+
+#### 6. `not_in_future`
+
+Protege contra timestamps futuros.
+
+**Fallaría si:**
+
+* El reloj del upstream está adelantado
+* Existen datos simulados colados en producción
+* Hay errores en la conversión de zona horaria
+
+#### 7. `unique_transaction_id`
+
+Segunda barrera contra duplicados, valida lógica de negocio.
+
+**Fallaría si:**
+
+* Un día se carga dos veces el mismo archivo
+* Se incorporan filas repetidas después del Bronze
+
+#### 8. `amount_not_outlier`
+
+Detecta outliers usando IQR.
+
+**Fallaría si:**
+
+* Hay transacciones fraudulentas
+* Hay errores manuales de carga
+* Se recibe “5000000” por error humano o de sistema
+
+
+#### 9. `no_duplicate_rows`
+
+Evita duplicados completos de todas las columnas.
+
+**Fallaría si:**
+
+* Se adjunta el mismo dataset dos veces
+* Hay un join mal aplicado en Bronze
+* Pandas concatena archivos sin cuidado
+
+## 🥇 GOLD — Métricas finales + Validación avanzada
+
+Airflow ejecuta:
+
+```
+dbt test
+```
+
+El modelo:
+
+```
+fct_customer_transactions.sql
+```
+
+Produce:
+
+* `transaction_count`
+* `total_amount_completed`
+* `total_amount_all`
+* `first_transaction_ts`
+* `last_transaction_ts`
+
+### 🧪 Tests GOLD y su valor analítico
+
+#### 1. `transaction_count_positive`
+
+Cada cliente debe tener al menos una transacción.
+
+**Fallaría si:**
+
+* El join Silver→Gold se rompe
+* Se filtran filas accidentalmente
+* Se incorporan clientes sin información factual
+
+---
+
+#### 2. `total_amount_non_negative`
+
+Asegura que las sumas nunca sean negativas.
+
+**Fallaría si:**
+
+* Escapó un valor negativo desde Silver
+* Las agregaciones están mal definidas
+* Se resta accidentalmente en vez de sumar
+
+---
+
+#### 3. `customer_exists_in_silver`
+
+Valida integridad referencial.
+
+**Fallaría si:**
+
+* Hay clientes agregados sin base factual
+* Se rompe el join
+* Hay llaves mal tipadas
+
+---
+
+#### 4. `valid_transaction_range`
+
+Garantiza consistencia temporal:
+
+```
+first_transaction_ts <= last_transaction_ts
+```
+
+**Fallaría si:**
+
+* Existen timestamps corruptos
+* Algún cast falló
+* Ordenamiento mal aplicado en el modelado
+
+---
+
+#### 5. `unique_customer_rows`
+
+Cada cliente debe aparecer una sola vez.
+
+**Fallaría si:**
+
+* Se agrupa incorrectamente
+* Existen duplicados en la lógica Gold
+* Se mezclan dimensiones con hechos
+
+### 📄 Reportes GOLD de Data Quality
+
+La tarea `gold_dbt_test()` genera:
+
+```
+data/quality/dq_results_<ds>.json
+```
+
+Incluye:
+
+* Estado global (`passed` / `failed`)
+* Duración de la corrida
+* stdout y stderr de dbt
+* Existencia del warehouse
+* Resumen completo para auditoría
+
+---
+
+# Instalación
 
 ```bash
 python -m venv .venv
@@ -45,7 +302,9 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## Configuración de variables de entorno
+---
+
+# Configuración de entorno
 
 ```bash
 export AIRFLOW_HOME=$(pwd)/airflow_home
@@ -55,39 +314,59 @@ export AIRFLOW__CORE__DAGS_FOLDER=$(pwd)/dags
 export AIRFLOW__CORE__LOAD_EXAMPLES=False
 ```
 
-## Inicializar Airflow
+---
+
+# Inicializar Airflow
 
 ```bash
 airflow standalone
 ```
 
-En el output de `airflow standalone` buscar la contraseña para loguearse. Ej:
+---
+
+# Ejecutar el DAG
+
+1. Colocar un archivo CSV:
+
 ```
-standalone | Airflow is ready
-standalone | Login with username: admin  password: pPr9XXxFzgrgGd6U
+data/raw/transactions_YYYYMMDD.csv
 ```
 
-
-## Ejecutar el DAG
-
-1. Coloca/actualiza el archivo `data/raw/transactions_YYYYMMDD.csv`.
-
-
-3. Desde la UI o CLI dispara el DAG usando la fecha deseada:
+2. Ejecutar:
 
 ```bash
 airflow dags trigger medallion_pipeline --run-id manual_$(date +%s)
 ```
 
-El DAG ejecutará:
+---
 
-- `bronze_clean`: llama a `clean_daily_transactions` para crear `data/clean/transactions_<ds>_clean.parquet`.
-- `silver_dbt_run`: ejecuta `dbt run` apuntando al proyecto `dbt/` y carga la data en DuckDB.
-- `gold_dbt_tests`: corre `dbt test` y escribe `data/quality/dq_results_<ds>.json` con el status (`passed`/`failed`).
+# Observabilidad por capa
 
-Si un test falla, el archivo igual se genera y el task termina en error para facilitar el monitoreo.
+## Bronze
 
-## Ejecutar dbt manualmente
+```
+duckdb -c "
+  select * from read_parquet('data/clean/transactions_<ds>_clean.parquet')
+  limit 5;
+"
+```
+
+## Silver
+
+```
+duckdb warehouse/medallion.duckdb -c ".tables"
+duckdb warehouse/medallion.duckdb -c "select * from stg_transactions limit 10;"
+```
+
+## Gold
+
+```
+cat data/quality/dq_results_<ds>.json | jq
+```
+
+---
+
+# Ejecutar dbt manualmente
 
 ```bash
 cd dbt
@@ -95,115 +374,70 @@ dbt run
 DBT_PROFILES_DIR=../profiles dbt test
 ```
 
-Asegúrate de exportar `CLEAN_DIR`, `DS_NODASH` y `DUCKDB_PATH` si necesitas sobreescribir valores por defecto:
+---
 
-```bash
-export CLEAN_DIR=$(pwd)/../data/clean
-export DS_NODASH=20251205
-export DUCKDB_PATH=$(pwd)/../warehouse/medallion.duckdb
-```
+# Conclusión: Escalabilidad y propuesta arquitectónica
 
-## Observabilidad de Data Quality
+Este pipeline es **perfecto para entornos educativos, prototipos y equipos pequeños**, pero su diseño también permite visualizar claramente el camino de evolución hacia un sistema de nivel industria.
 
-Cada corrida crea `data/quality/dq_results_<ds>.json` similar a:
+## ✔ Límites del diseño actual
 
-```json
-{
-  "ds_nodash": "20251205",
-  "status": "passed",
-  "stdout": "...",
-  "stderr": ""
-}
-```
+| Componente         | Limitación                            |
+| ------------------ | ------------------------------------- |
+| Pandas             | No escala horizontalmente             |
+| Parquet local      | No soporta concurrencia ni versionado |
+| DuckDB             | No distribuido, memoria local         |
+| Airflow standalone | No altamente disponible               |
 
-Ese archivo puede ser ingerido por otras herramientas para auditoría o alertas.
+---
 
+# Evolución
 
-## Verificación de resultados por capa
+## 1. Migración del almacenamiento
 
-### Bronze
-1. Revisa que exista el parquet más reciente:
-    ```bash
-    $ find data/clean/ | grep transactions_*
-    data/clean/transactions_20251201_clean.parquet
-    ```
-2. Inspecciona las primeras filas para confirmar la limpieza aplicada:
-    ```bash
-    duckdb -c "
-      SELECT *
-      FROM read_parquet('data/clean/transactions_20251201_clean.parquet')
-      LIMIT 5;
-    "
-    ```
+Del local a la nube:
 
-### Silver
-1. Abre el warehouse y lista las tablas creadas por dbt:
-    ```bash
-    duckdb warehouse/medallion.duckdb -c ".tables"
-    ```
-2. Ejecuta consultas puntuales para validar cálculos intermedios:
-    ```bash
-    duckdb warehouse/medallion.duckdb -c "
-      SELECT *
-      FROM fct_customer_transactions
-      LIMIT 10;
-    "
-    ```
+* Amazon S3
+* GCS
+* Azure Blob
 
-### Gold
-1. Revisa que exista el parquet más reciente:
-    ```bash
-    $ find data/quality/*.json
-    data/quality/dq_results_20251201.json
-    ```
+Incluye versionado, gobernanza y escalabilidad.
 
-2. Confirma la generación del archivo de data quality:
-    ```bash
-    cat data/quality/dq_results_20251201.json | jq
-    ```
+---
 
-3. En caso de fallos, inspecciona `stderr` dentro del mismo JSON o revisa los logs del task en la UI/CLI de Airflow para identificar la prueba que reportó error.
+## 2. Migración del warehouse
 
+De DuckDB a sistemas distribuidos:
 
-## Formato y linting
+* BigQuery
+* Snowflake
+* Redshift Serverless
+* Databricks + Delta Lake
 
-Usa las herramientas incluidas en `requirements.txt` para mantener un estilo consistente y detectar problemas antes de ejecutar el DAG.
+Beneficios:
 
-### Black (formateo)
+* Escalabilidad automática
+* Costos optimizados
+* Gran concurrencia en consultas
 
-Aplica Black sobre los módulos de Python del proyecto. Añade rutas extra si incorporas nuevos paquetes.
+---
 
-```bash
-black dags include
-```
+# Casos concretos que justificarían migrar
 
-### isort (orden de imports)
+* Retail procesando **millones de transacciones diarias**
+* Empresas que requieren **auditoría estricta y versionado**
+* Equipos de BI con decenas de usuarios simultáneos
+* Casos de Machine Learning donde se requieren años de histórico
 
-Ordena automáticamente los imports para evitar diffs innecesarios y mantener un estilo coherente.
+---
 
-```bash
-isort dags include
-```
+Este pipeline implementa un ejemplo sólido, profesional y completamente funcional de arquitectura Medallion moderna, integrando:
 
-### Pylint (estático)
+* Airflow
+* dbt
+* DuckDB
+* Validaciones Silver y Gold avanzadas
+* Orquestación y observabilidad
+* Diseño modular y extensible
 
-Ejecuta Pylint sobre las mismas carpetas para detectar errores comunes y mejorar la calidad del código.
-
-```bash
-pylint dags/*.py include/*.py
-```
-
-Para ejecutar ambos comandos de una vez puedes usar:
-
-```bash
-isort dags include && black dags include && pylint dags/*.py include/*.py
-```
-
-## TODOs
-Necesarios para completar el workflow:
-- [ ] Implementar tareas de Airflow.
-- [ ] Implementar modelos de dbt según cada archivo schema.yml.
-- [ ] Implementar pruebas de dbt para asegurar que las tablas gold estén correctas.
-- [ ] Documentar mejoras posibles para el proceso considerado aspectos de escalabilidad y modelado de datos.
-Nice to hace:
-- [ ] Manejar el caso que no haya archivos para el dia indicado.
+Además, muestra cómo este diseño puede evolucionar hacia arquitecturas empresariales de gran escala sin reescribir la lógica esencial del negocio.
