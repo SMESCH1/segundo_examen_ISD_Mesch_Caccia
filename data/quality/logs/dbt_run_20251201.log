@@ -1,0 +1,23 @@
+DBT RUN LOG — 20251201
+Duration: 6.25s
+
+STDOUT:
+[0m16:36:44  Running with dbt=1.10.15
+[0m16:36:45  Registered adapter: duckdb=1.10.0
+[0m16:36:46  Found 2 models, 29 data tests, 454 macros
+[0m16:36:46  
+[0m16:36:46  Concurrency: 4 threads (target='dev')
+[0m16:36:46  
+[0m16:36:46  1 of 2 START sql view model main.stg_transactions .............................. [RUN]
+[0m16:36:46  1 of 2 OK created sql view model main.stg_transactions ......................... [[32mOK[0m in 0.13s]
+[0m16:36:46  2 of 2 START sql table model main.fct_customer_transactions .................... [RUN]
+[0m16:36:46  2 of 2 OK created sql table model main.fct_customer_transactions ............... [[32mOK[0m in 0.10s]
+[0m16:36:46  
+[0m16:36:46  Finished running 1 table model, 1 view model in 0 hours 0 minutes and 0.45 seconds (0.45s).
+[0m16:36:46  
+[0m16:36:46  [32mCompleted successfully[0m
+[0m16:36:46  
+[0m16:36:46  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+
+
+STDERR:

@@ -49,9 +49,9 @@ El objetivo es demostrar un pipeline moderno, limpio y escalable que aplica prá
 
 ---
 
-# 🧱 Arquitectura Medallion Implementada
+# Arquitectura Medallion Implementada
 
-## 🥉 BRONZE — Limpieza mínima pero confiable con Pandas
+## BRONZE — Limpieza mínima pero confiable con Pandas
 
 Airflow ejecuta:
 
@@ -76,7 +76,7 @@ Salida:
 data/clean/transactions_<ds>_clean.parquet
 ```
 
-## 🥈 SILVER — Modelado con dbt
+## SILVER — Modelado con dbt
 
 Airflow ejecuta:
 
@@ -189,7 +189,7 @@ Evita duplicados completos de todas las columnas.
 * Hay un join mal aplicado en Bronze
 * Pandas concatena archivos sin cuidado
 
-## 🥇 GOLD — Métricas finales + Validación avanzada
+## GOLD — Métricas finales + Validación avanzada
 
 Airflow ejecuta:
 
@@ -211,7 +211,7 @@ Produce:
 * `first_transaction_ts`
 * `last_transaction_ts`
 
-### 🧪 Tests GOLD y su valor analítico
+### Tests GOLD y su valor analítico
 
 #### 1. `transaction_count_positive`
 
@@ -275,7 +275,7 @@ Cada cliente debe aparecer una sola vez.
 * Existen duplicados en la lógica Gold
 * Se mezclan dimensiones con hechos
 
-### 📄 Reportes GOLD de Data Quality
+### Reportes GOLD de Data Quality
 
 La tarea `gold_dbt_test()` genera:
 

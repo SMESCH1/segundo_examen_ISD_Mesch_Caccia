@@ -8,8 +8,6 @@ with source as (
     )
 )
 
--- TODO: Completar el modelo para que cree la tabla staging con los tipos adecuados segun el schema.yml.
-
 select
     cast(transaction_id as integer) as transaction_id,
     cast(customer_id as integer) as customer_id,
