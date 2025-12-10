@@ -8,6 +8,7 @@ with source as (
     )
 )
 
+-- queries
 select
     cast(transaction_id as integer) as transaction_id,
     cast(customer_id as integer) as customer_id,

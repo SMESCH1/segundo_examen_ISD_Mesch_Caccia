@@ -10,7 +10,7 @@ models:
         tests:
           - not_null
           - unique
-          - unique_transaction_id  # Custom test
+          - unique_transaction_id  
 
       - name: customer_id
         description: "Customer linked to the transaction."
@@ -22,20 +22,20 @@ models:
         tests:
           - not_null
           - non_negative
-          - amount_not_outlier  # Custom test for extreme amounts
+          - amount_not_outlier  # test para detectar outliers
 
       - name: status
         description: "Normalized status flag from the source system."
         tests:
           - not_null
-          - accepted_status     # Custom test enforcing strict values
+          - accepted_status     # test para validar los valores aceptados
 
       - name: transaction_ts
         description: "Event timestamp of the transaction."
         tests:
           - not_null
           - valid_timestamp
-          - not_in_future       # Custom test
+          - not_in_future       # test para validar que las fechas no son futuras
 
       - name: transaction_date
         description: "Date component derived from transaction_ts for partitioning/grouping."

@@ -10,28 +10,28 @@ models:
         tests:
           - not_null
           - unique
-          - customer_exists_in_silver        # Gold test: FK validity with Silver
+          - customer_exists_in_silver        # test para validar la integridad referencial con Silver
 
       - name: transaction_count
         description: "Number of transactions per customer."
         tests:
           - not_null
           - non_negative
-          - transaction_count_positive       # Gold test: must be >= 1
+          - transaction_count_positive       # validar que el numero de transacciones es mayor o igual a 1
 
       - name: total_amount_completed
         description: "Sum of completed transaction amounts."
         tests:
           - not_null
           - non_negative
-          - total_amount_non_negative         # Gold test (duplicate safety)
+          - total_amount_non_negative         # test para validar que el total de transacciones no es negativo
 
       - name: total_amount_all
         description: "Sum of all transaction amounts."
         tests:
           - not_null
           - non_negative
-          - total_amount_non_negative         # same business rule applies
+          - total_amount_non_negative         
 
       - name: first_transaction_ts
         description: "Earliest transaction timestamp for each customer."
@@ -44,4 +44,4 @@ models:
           - not_null
 
     tests:
-      - unique_customer_rows                  # Ensures 1 row per customer
+      - unique_customer_rows                  # una fila por cliente

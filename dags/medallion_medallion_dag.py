@@ -30,14 +30,11 @@ PROFILES_DIR = BASE_DIR / "profiles"
 WAREHOUSE_PATH = BASE_DIR / "warehouse/medallion.duckdb"
 
 
-# ---------------------------------------------------------------------------
-# Helper functions
-# ---------------------------------------------------------------------------
+# funciones auxiliares
 
 def _build_env(ds_nodash: str) -> dict[str, str]:
     """
-    Builds environment variables consumed by dbt models.
-    Ensures dbt has consistent and reproducible paths.
+    función que crea las variables de entorno de dbt
     """
     env = os.environ.copy()
     env.update(
@@ -53,8 +50,8 @@ def _build_env(ds_nodash: str) -> dict[str, str]:
 
 def _run_dbt_command(command: str, ds_nodash: str) -> subprocess.CompletedProcess:
     """
-    Generic runner for dbt commands (`run` and `test`).
-    Captures stdout/stderr for debugging and logging.
+    función para ejecturar los comandos de dbt (`run` y `test`).
+    permite hacer un seguimiento de los stdout/stderr para debugging y logging.
     """
     env = _build_env(ds_nodash)
     logger.info("Running dbt %s for ds_nodash=%s", command, ds_nodash)
@@ -65,23 +62,17 @@ def _run_dbt_command(command: str, ds_nodash: str) -> subprocess.CompletedProces
         env=env,
         capture_output=True,
         text=True,
-        check=False,  # Never raise here. We handle errors manually.
+        check=False,  
     )
 
 
-# ---------------------------------------------------------------------------
-# Bronze — Data cleaning and validation
-# ---------------------------------------------------------------------------
+# limpieza y validación de los datos
 
 def bronze_clean(**context):
     """
-    Bronze step: cleans the raw CSV for the execution date and stores
-    a normalized parquet file.
-
-    Enhancements added:
-    - Uses local timezone to avoid UTC drift on manual triggers.
-    - Validates that the generated parquet exists.
-    - Validates that the file is not empty (minimum required rows).
+    Etapa bronze de limpieza y validación de los datos
+    Limpia los datos crudos y almacena los datos en un archivo normalizado en formato parquet
+    Verifica que el archivo parquet existe y no esté vacío 
     """
     logical_date = context["logical_date"].in_timezone("America/Argentina/Buenos_Aires")
     execution_date = logical_date.date()
@@ -97,7 +88,7 @@ def bronze_clean(**context):
     except (FileNotFoundError, ValueError) as exc:
         raise AirflowFailException(str(exc)) from exc
 
-    # --- Additional Bronze verifications ---
+    # Verificaciones adicionales de la etapa bronze
     if not parquet_path.exists():
         raise AirflowFailException(f"Bronze parquet missing: {parquet_path}")
 
@@ -108,29 +99,27 @@ def bronze_clean(**context):
     return str(parquet_path)
 
 
-# ---------------------------------------------------------------------------
-# Silver — dbt run (Transforms → Silver models)
-# ---------------------------------------------------------------------------
+# Etapa Silver: modelo de transformación de los datos
+# dbt run (Transforms → Silver models)
 
 def silver_dbt_run(**context):
     """
-    Silver step: executes `dbt run` to load and transform cleaned data.
+    Etapa Silver: ejecuta `dbt run` para cargar y transformar los datos limpios.
 
-    Improvements:
-    - Confirms that parquet for ds_nodash exists BEFORE running dbt.
-    - Writes enhanced logs to QUALITY_LOG_DIR.
-    - Raises explicit failure when dbt returncode != 0.
+    - Confirma que el archivo parquet para ds_nodash existe antes de ejecutar dbt
+    - Escribe logs mejorados en QUALITY_LOG_DIR
+    - Lanza una excepción explícita cuando dbt returncode != 0
     """
-    logical_date = context["logical_date"].in_timezone("America/Argentina/Buenos_Aires")
+    logical_date = context["logical_date"].in_timezone("America/Argentina/Buenos_Aires") # evitar errires de timezone
     ds_nodash = logical_date.strftime("%Y%m%d")
 
     parquet_expected = CLEAN_DIR / f"transactions_{ds_nodash}_clean.parquet"
     if not parquet_expected.exists():
         raise AirflowFailException(
-            f"Silver stage blocked — missing bronze parquet: {parquet_expected}"
+            f"Etapa Silver fallida, falta el archivo parquet: {parquet_expected}"
         )
 
-    # Time tracking for observability
+    # Tracking del tiempo de ejecución
     start_time = pendulum.now("UTC")
     result = _run_dbt_command("run", ds_nodash)
     end_time = pendulum.now("UTC")
@@ -147,38 +136,35 @@ def silver_dbt_run(**context):
 
     if result.returncode != 0:
         raise AirflowException(
-            f"dbt run failed for {ds_nodash}. See logs: {log_path}"
+            f"Etapa Silver fallida, dbt run fallido para {ds_nodash}. Ver logs: {log_path}"
         )
 
-    logger.info("Silver OK — dbt run completed in %.2fs", duration)
+    logger.info("Etapa Silver OK — dbt run completada en %.2fs", duration)
     return True
 
 
-# ---------------------------------------------------------------------------
-# Gold — dbt test (Final validation + DQ artifact)
-# ---------------------------------------------------------------------------
+# Etapa Gold: validación de los datos
+# dbt test (Final validation + DQ artifact)
 
 def gold_dbt_test(**context):
     """
-    Gold step: executes `dbt test` and writes a JSON file summarizing
-    the data quality status.
+    Etapa Gold: ejecuta dbt test y escribe un archivo JSON que resume la calidad de los datos
 
-    Improvements:
-    - Validates DuckDB warehouse exists before testing.
-    - Writes enhanced DQ report, including duration.
-    - Fails the task if dbt tests fail.
+    - Verifica que el warehouse de DuckDB existe antes de ejecutar dbt test
+    - Escribe un archivo JSON que resume la calidad de los datos
+    - Lanza una excepción explícita cuando dbt tests fallan
     """
-    #ds_nodash = context["ds_nodash"]
+    #ds_nodash = context["ds_nodash"] 
     logical_date = context["logical_date"].in_timezone("America/Argentina/Buenos_Aires")
     execution_date = logical_date.date()
     ds_nodash = logical_date.strftime("%Y%m%d")
 
     if not WAREHOUSE_PATH.exists():
         raise AirflowFailException(
-            f"DuckDB warehouse missing before Gold stage: {WAREHOUSE_PATH}"
+            f"Etapa Gold fallida, el warehouse de DuckDB no existe: {WAREHOUSE_PATH}"
         )
 
-    start_time = pendulum.now("UTC")
+    start_time = pendulum.now("UTC") # tracking del tiempo de ejecución
     result = _run_dbt_command("test", ds_nodash)
     end_time = pendulum.now("UTC")
     duration = (end_time - start_time).total_seconds()
@@ -202,26 +188,20 @@ def gold_dbt_test(**context):
     )
 
     if result.returncode != 0:
-        raise AirflowException(f"dbt test failed for {ds_nodash}")
+        raise AirflowException(f"Etapa Gold fallida, dbt test fallido para {ds_nodash}")
 
-    logger.info("Gold OK — dbt test passed for %s", ds_nodash)
+    logger.info("Etapa Gold OK — dbt test completado para %s", ds_nodash)
     return True
 
 
-# ---------------------------------------------------------------------------
-# DAG definition
-# ---------------------------------------------------------------------------
+# Definimos el DAG
 
 def build_dag() -> DAG:
     """
-    DAG for Medallion pipeline with enhanced testing and documentation.
+    DAG para el pipeline de Medallion (Bronze → Silver → Gold) con validaciones
 
     Pipeline:
         Bronze → Silver → Gold
-
-    Notes:
-    - catchup=False to avoid undesired historical executions.
-    - max_active_runs=1 to enforce serial data correctness.
     """
     with DAG(
         dag_id="medallion_pipeline",
@@ -229,7 +209,7 @@ def build_dag() -> DAG:
         start_date=pendulum.datetime(2025, 12, 1, tz="UTC"),
         catchup=False,
         max_active_runs=1,
-        description="Medallion Architecture Pipeline (Bronze/Silver/Gold) with validations",
+        description="Pipeline de Medallion (Bronze → Silver → Gold) con validaciones",
     ) as dag:
 
         bronze = PythonOperator(task_id="bronze_clean", python_callable=bronze_clean)
