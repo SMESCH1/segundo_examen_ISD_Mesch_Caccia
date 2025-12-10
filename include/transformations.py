@@ -3,7 +3,7 @@
 
 
 from __future__ import annotations
-
+import logging
 from datetime import date
 from pathlib import Path
 import pandas as pd
@@ -37,6 +37,7 @@ def clean_daily_transactions(
     clean_dir: Path,
     raw_template: str = RAW_FILE_TEMPLATE,
     clean_template: str = CLEAN_FILE_TEMPLATE,
+    skip_if_missing: bool = False,
 ) -> Path:
     """
     Etapa de limpieza de los datos crudos.
