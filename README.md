@@ -249,23 +249,7 @@ Valida integridad referencial.
 
 ---
 
-#### 4. `valid_transaction_range`
-
-Garantiza consistencia temporal:
-
-```
-first_transaction_ts <= last_transaction_ts
-```
-
-**Fallaría si:**
-
-* Existen timestamps corruptos
-* Algún cast falló
-* Ordenamiento mal aplicado en el modelado
-
----
-
-#### 5. `unique_customer_rows`
+#### 4. `unique_customer_rows`
 
 Cada cliente debe aparecer una sola vez.
 

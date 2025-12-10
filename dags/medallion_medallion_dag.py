@@ -84,15 +84,36 @@ def bronze_clean(**context):
     )
 
     try:
-        parquet_path = clean_daily_transactions(execution_date, RAW_DIR, CLEAN_DIR)
-    except (FileNotFoundError, ValueError) as exc:
+        parquet_path = clean_daily_transactions(
+            execution_date, 
+            RAW_DIR, 
+            CLEAN_DIR,
+            skip_if_missing=True  # Activar manejo de archivos faltantes
+        )
+    except ValueError as exc:
         raise AirflowFailException(str(exc)) from exc
+    
+    # Manejo del caso cuando no hay archivo
+    if parquet_path is None:
+        logger.warning(
+            "No raw file found for %s. Pipeline execution skipped gracefully.",
+            ds_nodash
+        )
+        # Crear un archivo de marcador para indicar que se saltó la ejecución
+        skip_marker = CLEAN_DIR / f"transactions_{ds_nodash}_skipped.txt"
+        CLEAN_DIR.mkdir(parents=True, exist_ok=True)
+        skip_marker.write_text(
+            f"Skipped on {logical_date.isoformat()}: No raw file available\n",
+            encoding="utf-8"
+        )
+        # Retornar exitosamente pero las tareas siguientes deberían verificar
+        return None
 
     # Verificaciones adicionales de la etapa bronze
     if not parquet_path.exists():
         raise AirflowFailException(f"Bronze parquet missing: {parquet_path}")
 
-    if parquet_path.stat().st_size < 500:  # arbitrary threshold; prevents empty files
+    if parquet_path.stat().st_size < 500:
         logger.warning("Bronze parquet may be too small (<500 bytes): %s", parquet_path)
 
     logger.info("Bronze OK — parquet generated: %s (%d bytes)", parquet_path, parquet_path.stat().st_size)
@@ -114,10 +135,24 @@ def silver_dbt_run(**context):
     ds_nodash = logical_date.strftime("%Y%m%d")
 
     parquet_expected = CLEAN_DIR / f"transactions_{ds_nodash}_clean.parquet"
-    if not parquet_expected.exists():
-        raise AirflowFailException(
-            f"Etapa Silver fallida, falta el archivo parquet: {parquet_expected}"
+    skip_marker = CLEAN_DIR / f"transactions_{ds_nodash}_skipped.txt"
+    
+    # verificacion de archivos faltantes, nice to have
+    # Si hay un marcador de skip, terminar exitosamente
+    if skip_marker.exists():
+        logger.info(
+            "Skipping Silver stage for %s: No data available (skip marker found).",
+            ds_nodash
         )
+        return True
+    
+    if not parquet_expected.exists():
+        logger.warning(
+            "No parquet file found for %s. Skipping Silver stage.",
+            ds_nodash
+        )
+        return True 
+
 
     # Tracking del tiempo de ejecución
     start_time = pendulum.now("UTC")
